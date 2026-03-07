@@ -1,0 +1,109 @@
+/* ==========================================
+   MSR TENT MART - THEME & COLORS
+   Color palette, typography, and theme variables
+   Reusable across all pages
+   ========================================== */
+
+:root {
+    /* Brand Colors */
+    --primary-color: #800000;
+    --accent-gold: #C5A059;
+    
+    /* Background Colors */
+    --background-light: #f8f5f5;
+    --background-dark: #230f0f;
+    --background-dark-shade: rgba(35, 15, 15, 0.5);
+    
+    /* Text Colors */
+    --text-light: #1f2937;
+    --text-dark: #f3f4f6;
+    --text-muted-light: #6b7280;
+    --text-muted-medium: #9ca3af;
+    --text-muted-dark: #374151;
+    
+    /* Footer Colors */
+    --footer-bg: #111827;
+    --footer-border: #1f2937;
+    --footer-text-muted: #9ca3af;
+    
+    /* Border Colors */
+    --border-light: #e5e7eb;
+    --border-dark: #374151;
+    --border-primary-light: rgba(128, 0, 0, 0.1);
+    
+    /* Background Utility Colors */
+    --bg-slate-50: #f9fafb;
+    --bg-slate-800: #1f2937;
+    --bg-slate-900: #111827;
+    --bg-primary-light: rgba(128, 0, 0, 0.2);
+    --bg-primary-lighter: rgba(128, 0, 0, 0.1);
+    --bg-gold-light: rgba(197, 160, 89, 0.2);
+    
+    /* Typography */
+    --font-primary: 'Manrope', sans-serif;
+    --font-size-badge: 0.875rem;
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 4.5rem;
+    
+    /* Font Weights */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    
+    /* Border Radius */
+    --radius-default: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-24: 6rem;
+    
+    /* Shadow */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Z-Index */
+    --z-sticky: 1000;
+    --z-dropdown: 1050;
+    --z-modal: 1060;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --transition-slower: 0.7s ease;
+}
+
+/* ==========================================
+   DARK MODE OVERRIDES
+   ========================================== */
+
+body.dark-mode {
+    --background-light: var(--background-dark);
+    --text-light: var(--text-dark);
+    --text-muted-light: var(--text-muted-medium);
+    --text-muted-dark: #d1d5db;
+    --border-light: var(--border-dark);
+}
