@@ -19,13 +19,10 @@ body.dark-mode header {
 
 .logo-box {
     display: flex;
-    height: 48px;
-    width: 48px;
+    height: 75px;
+    width: auto;
     align-items: center;
     justify-content: center;
-    border-radius: 0.75rem;
-    background-color: var(--primary-color);
-    color: white;
 }
 
 .logo-box .material-symbols-outlined {
