@@ -150,6 +150,11 @@ body.dark-mode header {
         display: none;
     }
 
+    .nav-left,
+    .nav-right {
+        display: none !important;
+    }
+
     .header-center {
         position: absolute;
         left: 50%;
