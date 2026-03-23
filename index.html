@@ -22,37 +22,32 @@
 <body>
     <!-- Top Navigation -->
     <header class="sticky-top">
-        <div class="header-centered">
-            <div class="nav-section nav-left">
-                <a class="nav-link" href="#">Home</a>
-                <a class="nav-link" href="#services">Services</a>
-            </div>
-
-            <div class="header-center">
-                <div class="logo-box">
-                    <img src="assets/images/msr-tent-mart-logo-1.png" alt="MSR Tent Mart Logo" style="width: 100px; height: 100px; object-fit: contain;">
+        <div class="container-max mx-auto px-responsive">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="logo-box">
+                        <img src="assets/images/msr-tent-mart-logo-1.png" alt="MSR Tent Mart Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <!-- <div>
+                        <h1 class="brand-title mb-0">MSR TENT MART</h1>
+                        <p class="brand-subtitle mb-0">Decoration Materials</p>
+                    </div> -->
                 </div>
-            </div>
 
-            <div class="nav-section nav-right">
-                <a class="nav-link" href="#gallery">Our Work</a>
-                <a class="nav-link" href="#about">About</a>
-                <a class="nav-link" href="#contact">Contact Us</a>
-            </div>
+                <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <div class="collapse navbar-collapse mobile-nav-menu" id="navbarNav">
-                <div class="navbar-nav d-flex flex-column gap-2 align-items-center mobile-nav">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#services">Services</a>
-                    <a class="nav-link" href="#gallery">Our Work</a>
-                    <a class="nav-link" href="#about">About</a>
-                    <a class="nav-link" href="#contact">Contact Us</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <nav class="navbar-nav ms-auto d-flex gap-3 align-items-center">
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="#gallery">Our Work</a>
+                        <a class="nav-link" href="#about">About</a>
+                        <a class="btn btn-primary-custom" href="#contact">Contact Us</a>
+                    </nav>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
 
