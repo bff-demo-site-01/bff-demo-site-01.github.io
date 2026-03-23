@@ -194,6 +194,17 @@ body.dark-mode header {
     z-index: 1001;
 }
 
+@media (max-width: 767px) {
+    .logo-box {
+        left: 1rem;
+        transform: none;
+        border-radius: 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
 .logo-box img {
     width: 95px;
     height: 95px;
