@@ -20,78 +20,33 @@
     <link href="assets/css/index.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Container -->
     <header>
-        <!-- Desktop Decorative Strip -->
-        <div class="decorative-strip d-none d-lg-block">
-            <svg viewBox="0 0 1200 60" preserveAspectRatio="none" class="decorative-svg">
-                <defs>
-                    <pattern id="floral-pattern" x="0" y="0" width="240" height="60" patternUnits="userSpaceOnUse">
-                        <circle cx="30" cy="20" r="1.5" fill="none" stroke="#2d6a2d" stroke-width="0.3" opacity="0.15"/>
-                        <circle cx="60" cy="40" r="1" fill="none" stroke="#2d6a2d" stroke-width="0.3" opacity="0.12"/>
-                        <circle cx="90" cy="15" r="1.2" fill="none" stroke="#2d6a2d" stroke-width="0.3" opacity="0.1"/>
-                        <path d="M 30 18 Q 28 19 30 20 Q 32 19 30 18" fill="none" stroke="#2d6a2d" stroke-width="0.3" opacity="0.1"/>
-                        <path d="M 150 30 Q 148 32 150 35 Q 152 32 150 30" fill="none" stroke="#2d6a2d" stroke-width="0.3" opacity="0.08"/>
-                        <circle cx="180" cy="25" r="0.8" fill="none" stroke="#2d6a2d" stroke-width="0.3" opacity="0.1"/>
-                        <circle cx="210" cy="45" r="1" fill="none" stroke="#2d6a2d" stroke-width="0.3" opacity="0.12"/>
-                    </pattern>
-                </defs>
-                <rect width="1200" height="60" fill="white"/>
-                <rect width="1200" height="60" fill="url(#floral-pattern)"/>
-            </svg>
-        </div>
-
         <!-- Sticky Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light navbar-desktop sticky-top">
-            <div class="navbar-container d-flex align-items-center w-100 justify-content-between position-relative">
-                <!-- Left Navigation -->
-                <div class="nav-left d-none d-lg-flex align-items-center">
-                    <a class="nav-link-desktop" href="#">Welcome</a>
-                    <a class="nav-link-desktop" href="#about">About Us</a>
-                    <a class="nav-link-desktop" href="#services">Our Products</a>
-                </div>
+        <nav class="navbar navbar-desktop sticky-top" id="main-nav">
+            <ul class="nav-left list-unstyled mb-0">
+                <li><a class="nav-link-desktop" href="#">Welcome</a></li>
+                <li><a class="nav-link-desktop" href="#about">About Us</a></li>
+                <li><a class="nav-link-desktop" href="#services">Our Products</a></li>
+            </ul>
 
-                <!-- Centered Logo Badge -->
-                <div class="logo-badge-wrapper">
-                    <div class="logo-badge">
-                        <img src="assets/images/msr-tent-mart-logo-1.png" alt="MSR Tent Mart Logo">
-                    </div>
-                </div>
+            <a href="#" class="nav-logo">
+                <img src="assets/images/msr-tent-mart-logo-1.png" alt="MSR Tent Mart Logo" />
+            </a>
 
-                <!-- Right Navigation -->
-                <div class="nav-right d-none d-lg-flex align-items-center">
-                    <a class="nav-link-desktop" href="#gallery">Our Gallery</a>
-                    <a class="nav-link-desktop" href="#testimonials">Our Testimonials</a>
-                    <a class="nav-link-desktop" href="#contact">Contact Us</a>
-                </div>
+            <ul class="nav-right list-unstyled mb-0">
+                <li><a class="nav-link-desktop" href="#gallery">Our Gallery</a></li>
+                <li><a class="nav-link-desktop" href="#testimonials">Our Testimonials</a></li>
+                <li><a class="nav-link-desktop" href="#contact">Contact Us</a></li>
+            </ul>
 
-                <!-- Mobile Menu Button -->
-                <button class="navbar-toggler mobile-menu-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div class="collapse navbar-collapse" id="navbarNav" style="display: none !important;">
-                <nav class="navbar-nav ms-auto w-100 flex-column gap-2">
-                    <a class="nav-link" href="#">Welcome</a>
-                    <a class="nav-link" href="#about">About Us</a>
-                    <a class="nav-link" href="#services">Our Products</a>
-                    <a class="nav-link" href="#gallery">Our Gallery</a>
-                    <a class="nav-link" href="#testimonials">Our Testimonials</a>
-                    <a class="nav-link" href="#contact">Contact Us</a>
-                </nav>
-            </div>
+            <!-- Mobile only -->
+            <button class="hamburger d-lg-none" aria-label="Toggle menu" type="button" onclick="document.getElementById('main-nav').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Banner Section (Desktop) -->
-        <section class="hero-banner d-none d-lg-block">
-            <div class="hero-banner-bokeh"></div>
-            <div class="hero-banner-vignette"></div>
-        </section>
-
         <!-- Hero Section -->
         <section class="hero-section" style="background-image: url('assets/images/gallery/msr-tent-mart-hero-img.png');" >
             <div class="hero-content">
@@ -326,7 +281,7 @@
                                 </div>
                                 <div>
                                     <h5>Email</h5>
-                                    <p>info@msrtentmart.com</p>
+                                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d74737b725d706e6f69787369707c6f69337e7270">[email&#160;protected]</a></p>
                                 </div>
                             </div>
                         </div>
@@ -444,7 +399,7 @@
     </footer>
 
     <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
         // Add fade-in animation to page elements on load
@@ -469,14 +424,12 @@
             });
 
             // Mobile menu close on link click
-            const navLinks = document.querySelectorAll('.navbar-nav a');
-            const navbarToggle = document.querySelector('.navbar-toggler');
-            
+            const navLinks = document.querySelectorAll('.nav-link-desktop');
+            const mainNav = document.getElementById('main-nav');
+
             navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth < 768) {
-                        navbarToggle.click();
-                    }
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('open');
                 });
             });
         });
