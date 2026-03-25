@@ -4,87 +4,215 @@
    ========================================== */
 
 /* ==========================================
-   HEADER / NAVIGATION
+   HEADER / NAVIGATION - DESKTOP ONLY (min-width: 1024px)
    ========================================== */
 
 header {
-    border-bottom: 1px solid var(--border-primary-light);
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
+    position: relative;
 }
 
-body.dark-mode header {
-    background-color: rgba(35, 15, 15, 0.8);
+/* Hide entire header on mobile (below 1024px) */
+@media (max-width: 1023px) {
+    header {
+        display: none !important;
+    }
+
+    .navbar-toggler,
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        display: none !important;
+    }
 }
 
-.logo-box {
-    display: flex;
-    height: 75px;
-    width: auto;
-    align-items: center;
-    justify-content: center;
+/* Desktop-only header styles (min-width: 1024px) */
+@media (min-width: 1024px) {
+    /* Decorative Strip */
+    .decorative-strip {
+        width: 100%;
+        height: 60px;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .decorative-svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Sticky Navigation Bar */
+    .navbar-desktop {
+        background-color: #ffffff;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 12px 40px !important;
+        height: 80px;
+        display: flex !important;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        z-index: 1020;
+    }
+
+    .navbar-desktop.sticky-top {
+        position: sticky;
+        top: 60px;
+    }
+
+    .navbar-container {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    /* Navigation Groups - Left and Right */
+    .nav-left,
+    .nav-right {
+        display: flex !important;
+        gap: 3.5rem;
+        align-items: center;
+    }
+
+    .nav-left {
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .nav-right {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    /* Navigation Links */
+    .nav-link-desktop {
+        color: #333333;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+        font-family: 'Georgia', 'Garamond', serif;
+        white-space: nowrap;
+    }
+
+    .nav-link-desktop::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #2d6a2d;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link-desktop:hover {
+        color: #2d6a2d;
+    }
+
+    .nav-link-desktop:hover::after {
+        width: 100%;
+    }
+
+    /* Logo Badge - Centered with Overlap */
+    .logo-badge-wrapper {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1030;
+        top: -20px;
+    }
+
+    .logo-badge {
+        width: 95px;
+        height: 95px;
+        background-color: #ffffff;
+        border: 3px solid #2d6a2d;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        padding: 6px;
+    }
+
+    .logo-badge:hover {
+        box-shadow: 0 12px 32px rgba(45, 106, 45, 0.25);
+        transform: translateY(-4px);
+    }
+
+    .logo-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    /* Hide mobile elements on desktop */
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        display: none !important;
+    }
 }
 
-.logo-box .material-symbols-outlined {
-    font-size: 1.875rem;
-}
+/* ==========================================
+   HERO BANNER - DECORATIVE BOKEH (DESKTOP ONLY)
+   ========================================== */
 
-.brand-title {
-    color: var(--primary-color);
-    font-size: 1.25rem;
-    font-weight: bold;
-    letter-spacing: -0.02em;
-}
+@media (min-width: 1024px) {
+    .hero-banner {
+        position: relative;
+        height: 180px;
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient(135deg, #fff8e7, #fff5e9);
+    }
 
-.brand-subtitle {
-    font-size: 0.625rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-}
+    .hero-banner-bokeh {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(circle at 10% 20%, rgba(255, 165, 0, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(76, 153, 0, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 60% 60%, rgba(128, 0, 128, 0.12) 0%, transparent 50%),
+            radial-gradient(circle at 90% 70%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 15% 50%, rgba(255, 200, 124, 0.12) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(144, 238, 144, 0.1) 0%, transparent 50%);
+        animation: bokeh-float 15s ease-in-out infinite;
+    }
 
-.navbar-nav a.nav-link:not(.btn) {
-    color: var(--text-light);
-    font-size: 0.875rem;
-    font-weight: 600;
-}
+    .hero-banner-vignette {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    }
 
-body.dark-mode .navbar-nav a.nav-link:not(.btn) {
-    color: #9ca3af;
-}
-
-.navbar-nav a.nav-link:not(.btn):hover {
-    color: var(--primary-color);
-}
-
-.btn-primary-custom {
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 9999px;
-    color: white;
-    font-weight: bold;
-    padding: 0.625rem 1.5rem;
-    text-decoration: none;
-    transition: background-color var(--transition-base);
-}
-
-.btn-primary-custom:hover {
-    background-color: rgba(128, 0, 0, 0.9);
-    color: white;
-}
-
-.mobile-menu-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.875rem;
-    color: var(--text-light);
-    transition: color var(--transition-base);
-}
-
-.mobile-menu-btn:hover {
-    color: var(--primary-color);
+    @keyframes bokeh-float {
+        0%, 100% {
+            transform: translate(0px, 0px) scale(1);
+        }
+        25% {
+            transform: translate(-10px, 8px) scale(1.05);
+        }
+        50% {
+            transform: translate(5px, -5px) scale(0.98);
+        }
+        75% {
+            transform: translate(-5px, -8px) scale(1.02);
+        }
+    }
 }
 
 /* ==========================================
