@@ -1,0 +1,779 @@
+{
+  "meta": {
+    "productCount": 77,
+    "categoryCount": 7
+  },
+  "imgBasePath": "assets/images/products/",
+  "products": [
+    {
+      "id": 1,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w1-001.jpg",
+      "category": "Sofa",
+      "code": "MS_W1_001",
+      "price": 0
+    },
+    {
+      "id": 2,
+      "name": "Sofa Yellow",
+      "description": "Sofa Yellow",
+      "slug": ["sofa-yellow"],
+      "image": "sofa-yellow-ms-yw-002.jpg",
+      "category": "Sofa",
+      "code": "MS_YW_002",
+      "price": 0
+    },
+    {
+      "id": 3,
+      "name": "Sofa Grey",
+      "description": "Sofa Grey",
+      "slug": ["sofa-grey"],
+      "image": "sofa-grey-ms-gy-003.jpg",
+      "category": "Sofa",
+      "code": "MS_GY_003",
+      "price": 0
+    },
+    {
+      "id": 4,
+      "name": "Sofa Maroon",
+      "description": "Sofa Maroon",
+      "slug": ["sofa-maroon"],
+      "image": "sofa-maroon-ms-mn-004.jpg",
+      "category": "Sofa",
+      "code": "MS_MN_004",
+      "price": 0
+    },
+    {
+      "id": 5,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w2-005.jpg",
+      "category": "Sofa",
+      "code": "MS_W2_005",
+      "price": 0
+    },
+    {
+      "id": 6,
+      "name": "Sofa Rose",
+      "description": "Sofa Rose",
+      "slug": ["sofa-rose"],
+      "image": "sofa-rose-ms-ro-006.jpg",
+      "category": "Sofa",
+      "code": "MS_RO_006",
+      "price": 0
+    },
+    {
+      "id": 7,
+      "name": "Sofa Peach",
+      "description": "Sofa Peach",
+      "slug": ["sofa-peach"],
+      "image": "sofa-peach-ms-ph-007.jpg",
+      "category": "Sofa",
+      "code": "MS_PH_007",
+      "price": 0
+    },
+    {
+      "id": 8,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w3-008.jpg",
+      "category": "Sofa",
+      "code": "MS_W3_008",
+      "price": 0
+    },
+    {
+      "id": 9,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w4-009.jpg",
+      "category": "Sofa",
+      "code": "MS_W4_009",
+      "price": 0
+    },
+    {
+      "id": 10,
+      "name": "Sofa Red",
+      "description": "Sofa Red",
+      "slug": ["sofa-red"],
+      "image": "sofa-red-ms-rd-0010.jpg",
+      "category": "Sofa",
+      "code": "MS_RD_0010",
+      "price": 0
+    },
+    {
+      "id": 11,
+      "name": "Sofa Astriek Blue",
+      "description": "Sofa Astriek Blue",
+      "slug": ["sofa-astriek-blue"],
+      "image": "sofa-astriek-blue-ms-ab-011.jpg",
+      "category": "Sofa",
+      "code": "MS_AB_011",
+      "price": 0
+    },
+    {
+      "id": 12,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w5-012.jpg",
+      "category": "Sofa",
+      "code": "MS_W5_012",
+      "price": 0
+    },
+    {
+      "id": 13,
+      "name": "Sofa Red",
+      "description": "Sofa Red",
+      "slug": ["sofa-red"],
+      "image": "sofa-red-ms-rd-013.jpg",
+      "category": "Sofa",
+      "code": "MS_RD_013",
+      "price": 0
+    },
+    {
+      "id": 14,
+      "name": "Sofa Lavender",
+      "description": "Sofa Lavender",
+      "slug": ["sofa-lavender"],
+      "image": "sofa-lavender-ms-l1-014.jpg",
+      "category": "Sofa",
+      "code": "MS_L1_014",
+      "price": 0
+    },
+    {
+      "id": 15,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w6-015.jpg",
+      "category": "Sofa",
+      "code": "MS_W6_015",
+      "price": 0
+    },
+    {
+      "id": 16,
+      "name": "Sofa Pink",
+      "description": "Sofa Pink",
+      "slug": ["sofa-pink"],
+      "image": "sofa-pink-ms-pk-016.jpg",
+      "category": "Sofa",
+      "code": "MS_PK_016",
+      "price": 0
+    },
+    {
+      "id": 17,
+      "name": "Sofa Dark Green",
+      "description": "Sofa Dark Green",
+      "slug": ["sofa-dark-green"],
+      "image": "sofa-dark-green-ms-dg-017.jpg",
+      "category": "Sofa",
+      "code": "MS_DG_017",
+      "price": 0
+    },
+    {
+      "id": 18,
+      "name": "Sofa Lavender",
+      "description": "Sofa Lavender",
+      "slug": ["sofa-lavender"],
+      "image": "sofa-lavender-ms-l2-018.jpg",
+      "category": "Sofa",
+      "code": "MS_L2_018",
+      "price": 0
+    },
+    {
+      "id": 19,
+      "name": "Sofa Blue",
+      "description": "Sofa Blue",
+      "slug": ["sofa-blue"],
+      "image": "sofa-blue-ms-be-019.jpg",
+      "category": "Sofa",
+      "code": "MS_BE_019",
+      "price": 0
+    },
+    {
+      "id": 20,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w7-020.jpg",
+      "category": "Sofa",
+      "code": "MS_W7_020",
+      "price": 0
+    },
+    {
+      "id": 21,
+      "name": "Sofa Lavender",
+      "description": "Sofa Lavender",
+      "slug": ["sofa-lavender"],
+      "image": "sofa-lavender-ms-l3-021.jpg",
+      "category": "Sofa",
+      "code": "MS_L3_021",
+      "price": 0
+    },
+    {
+      "id": 22,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w8-022.jpg",
+      "category": "Sofa",
+      "code": "MS_W8_022",
+      "price": 0
+    },
+    {
+      "id": 23,
+      "name": "Sofa White",
+      "description": "Sofa White",
+      "slug": ["sofa-white"],
+      "image": "sofa-white-ms-w9-023.jpg",
+      "category": "Sofa",
+      "code": "MS_W9_023",
+      "price": 0
+    },
+    {
+      "id": 24,
+      "name": "Mate 5223 Grey",
+      "description": "Mate 5223 Grey",
+      "slug": ["mate-5223-grey"],
+      "image": "mate-5223-grey-mm-gy-001.jpg",
+      "category": "Mate",
+      "code": "MM_GY_001",
+      "price": 0
+    },
+    {
+      "id": 25,
+      "name": "Mate 6574 Cyan",
+      "description": "Mate 6574 Cyan",
+      "slug": ["mate-6574-cyan"],
+      "image": "mate-6574-cyan-mm-cn-002.jpg",
+      "category": "Mate",
+      "code": "MM_CN_002",
+      "price": 0
+    },
+    {
+      "id": 26,
+      "name": "Mate 5645 Rainbow",
+      "description": "Mate 5645 Rainbow",
+      "slug": ["mate-5645-rainbow"],
+      "image": "mate-5645-rainbow-mm-rw-003.jpg",
+      "category": "Mate",
+      "code": "MM_RW_003",
+      "price": 0
+    },
+    {
+      "id": 27,
+      "name": "Mate 1261 Red",
+      "description": "Mate 1261 Red",
+      "slug": ["mate-1261-red"],
+      "image": "mate-1261-red-mm-rd1-004.jpg",
+      "category": "Mate",
+      "code": "MM_RD1_004",
+      "price": 0
+    },
+    {
+      "id": 28,
+      "name": "Mate 1284 Gold",
+      "description": "Mate 1284 Gold",
+      "slug": ["mate-1284-gold"],
+      "image": "mate-1284-gold-mm-gd-005.jpg",
+      "category": "Mate",
+      "code": "MM_GD_005",
+      "price": 0
+    },
+    {
+      "id": 29,
+      "name": "Mate 6541 Brown",
+      "description": "Mate 6541 Brown",
+      "slug": ["mate-6541-brown"],
+      "image": "mate-6541-brown-mm-bn1-006.jpg",
+      "category": "Mate",
+      "code": "MM_BN1_006",
+      "price": 0
+    },
+    {
+      "id": 30,
+      "name": "Mate 1111 Coffee",
+      "description": "Mate 1111 Coffee",
+      "slug": ["mate-1111-coffee"],
+      "image": "mate-1111-coffee-mm-ce-007.jpg",
+      "category": "Mate",
+      "code": "MM_CE_007",
+      "price": 0
+    },
+    {
+      "id": 31,
+      "name": "Mate 3881 LT Brown",
+      "description": "Mate 3881 LT Brown",
+      "slug": ["mate-3881-lt-brown"],
+      "image": "mate-3881-lt-brown-mm-lt-bn-008.jpg",
+      "category": "Mate",
+      "code": "MM_LT BN_008",
+      "price": 0
+    },
+    {
+      "id": 32,
+      "name": "Mate 5429 Beige",
+      "description": "Mate 5429 Beige",
+      "slug": ["mate-5429-beige"],
+      "image": "mate-5429-beige-mm-be-009.jpg",
+      "category": "Mate",
+      "code": "MM_BE_009",
+      "price": 0
+    },
+    {
+      "id": 33,
+      "name": "Mate 1633 Red",
+      "description": "Mate 1633 Red",
+      "slug": ["mate-1633-red"],
+      "image": "mate-1633-red-mm-rd2-010.jpg",
+      "category": "Mate",
+      "code": "MM_RD2_010",
+      "price": 0
+    },
+    {
+      "id": 34,
+      "name": "Shubham Mate 2999 Purple",
+      "description": "Shubham Mate 2999 Purple",
+      "slug": ["shubham-mate-2999-purple"],
+      "image": "shubham-mate-2999-purple-mm-pe-011.jpg",
+      "category": "Mate",
+      "code": "MM_PE_011",
+      "price": 0
+    },
+    {
+      "id": 35,
+      "name": "Mate 3399 Red",
+      "description": "Mate 3399 Red",
+      "slug": ["mate-3399-red"],
+      "image": "mate-3399-red-mm-rd3-012.jpg",
+      "category": "Mate",
+      "code": "MM_RD3_012",
+      "price": 0
+    },
+    {
+      "id": 36,
+      "name": "Shubham Mate 3500 Red",
+      "description": "Shubham Mate 3500 Red",
+      "slug": ["shubham-mate-3500-red"],
+      "image": "shubham-mate-3500-red-mm-rd4-013.jpg",
+      "category": "Mate",
+      "code": "MM_RD4_013",
+      "price": 0
+    },
+    {
+      "id": 37,
+      "name": "Shubham Mate 1470 Maroon",
+      "description": "Shubham Mate 1470 Maroon",
+      "slug": ["shubham-mate-1470-maroon"],
+      "image": "shubham-mate-1470-maroon-mm-mn-014.jpg",
+      "category": "Mate",
+      "code": "MM_MN_014",
+      "price": 0
+    },
+    {
+      "id": 38,
+      "name": "Shubham Mate 353 Brown",
+      "description": "Shubham Mate 353 Brown",
+      "slug": ["shubham-mate-353-brown"],
+      "image": "shubham-mate-353-brown-mm-bn2-015.jpg",
+      "category": "Mate",
+      "code": "MM_BN2_015",
+      "price": 0
+    },
+    {
+      "id": 39,
+      "name": "Shubham Mate 1501 Red",
+      "description": "Shubham Mate 1501 Red",
+      "slug": ["shubham-mate-1501-red"],
+      "image": "shubham-mate-1501-red-mm-rd5-016.jpg",
+      "category": "Mate",
+      "code": "MM_RD5_016",
+      "price": 0
+    },
+    {
+      "id": 40,
+      "name": "Screen White",
+      "description": "Screen White",
+      "slug": ["screen-white"],
+      "image": "screen-white-ms-w-001.jpg",
+      "category": "Screen",
+      "code": "MS_W_001",
+      "price": 0
+    },
+    {
+      "id": 41,
+      "name": "Screen Green",
+      "description": "Screen Green",
+      "slug": ["screen-green"],
+      "image": "screen-green-ms-g-002.jpg",
+      "category": "Screen",
+      "code": "MS_G_002",
+      "price": 0
+    },
+    {
+      "id": 42,
+      "name": "Screen Lavender",
+      "description": "Screen Lavender",
+      "slug": ["screen-lavender"],
+      "image": "screen-lavender-ms-l-003.jpg",
+      "category": "Screen",
+      "code": "MS_L_003",
+      "price": 0
+    },
+    {
+      "id": 43,
+      "name": "Screen Red",
+      "description": "Screen Red",
+      "slug": ["screen-red"],
+      "image": "screen-red-ms-r-004.jpg",
+      "category": "Screen",
+      "code": "MS_R_004",
+      "price": 0
+    },
+    {
+      "id": 44,
+      "name": "Screen Blue",
+      "description": "Screen Blue",
+      "slug": ["screen-blue"],
+      "image": "screen-blue-ms-b-005.jpg",
+      "category": "Screen",
+      "code": "MS_B_005",
+      "price": 0
+    },
+    {
+      "id": 45,
+      "name": "Stall Screen Gold Red",
+      "description": "Stall Screen Gold Red",
+      "slug": ["stall-screen-gold-red"],
+      "image": "stall-screen-gold-red-ms-gr-006.jpg",
+      "category": "Screen",
+      "code": "MS_GR_006",
+      "price": 0
+    },
+    {
+      "id": 46,
+      "name": "Flower Pink Rose",
+      "description": "Flower Pink Rose",
+      "slug": ["flower-pink-rose"],
+      "image": "flower-pink-rose-mf-pr-001.jpg",
+      "category": "Flower",
+      "code": "MF_PR_001",
+      "price": 0
+    },
+    {
+      "id": 47,
+      "name": "Flower White Red",
+      "description": "Flower White Red",
+      "slug": ["flower-white-red"],
+      "image": "flower-white-red-mf-wr-002.jpg",
+      "category": "Flower",
+      "code": "MF_WR_002",
+      "price": 0
+    },
+    {
+      "id": 48,
+      "name": "Flower Red",
+      "description": "Flower Red",
+      "slug": ["flower-red"],
+      "image": "flower-red-mf-r-003.jpg",
+      "category": "Flower",
+      "code": "MF_R_003",
+      "price": 0
+    },
+    {
+      "id": 49,
+      "name": "Flower Peach",
+      "description": "Flower Peach",
+      "slug": ["flower-peach"],
+      "image": "flower-peach-mf-ph-004.jpg",
+      "category": "Flower",
+      "code": "MF_PH_004",
+      "price": 0
+    },
+    {
+      "id": 50,
+      "name": "Flower Lavender",
+      "description": "Flower Lavender",
+      "slug": ["flower-lavender"],
+      "image": "flower-lavender-mf-lr-005.jpg",
+      "category": "Flower",
+      "code": "MF_LR_005",
+      "price": 0
+    },
+    {
+      "id": 51,
+      "name": "Flower White",
+      "description": "Flower White",
+      "slug": ["flower-white"],
+      "image": "flower-white-mf-we-006.jpg",
+      "category": "Flower",
+      "code": "MF_WE_006",
+      "price": 0
+    },
+    {
+      "id": 52,
+      "name": "Flower Blue",
+      "description": "Flower Blue",
+      "slug": ["flower-blue"],
+      "image": "flower-blue-mf-be-007.jpg",
+      "category": "Flower",
+      "code": "MF_BE_007",
+      "price": 0
+    },
+    {
+      "id": 53,
+      "name": "Flower Red",
+      "description": "Flower Red",
+      "slug": ["flower-red"],
+      "image": "flower-red-mf-rd-008.jpg",
+      "category": "Flower",
+      "code": "MF_RD_008",
+      "price": 0
+    },
+    {
+      "id": 54,
+      "name": "Flower Yellow White",
+      "description": "Flower Yellow White",
+      "slug": ["flower-yellow-white"],
+      "image": "flower-yellow-white-mf-yw-009.jpg",
+      "category": "Flower",
+      "code": "MF_YW_009",
+      "price": 0
+    },
+    {
+      "id": 55,
+      "name": "Flower White",
+      "description": "Flower White",
+      "slug": ["flower-white"],
+      "image": "flower-white-mf-w-010.jpg",
+      "category": "Flower",
+      "code": "MF_W_010",
+      "price": 0
+    },
+    {
+      "id": 56,
+      "name": "Flower White Red",
+      "description": "Flower White Red",
+      "slug": ["flower-white-red"],
+      "image": "flower-white-red-mf-wr-011.jpg",
+      "category": "Flower",
+      "code": "MF_WR_011",
+      "price": 0
+    },
+    {
+      "id": 57,
+      "name": "Flower Pink White Red",
+      "description": "Flower Pink White Red",
+      "slug": ["flower-pink-white-red"],
+      "image": "flower-pink-white-red-mf-pwr1-012.jpg",
+      "category": "Flower",
+      "code": "MF_PWR1_012",
+      "price": 0
+    },
+    {
+      "id": 58,
+      "name": "Flower Pink White Red",
+      "description": "Flower Pink White Red",
+      "slug": ["flower-pink-white-red"],
+      "image": "flower-pink-white-red-mf-pwr2-013.jpg",
+      "category": "Flower",
+      "code": "MF_PWR2_013",
+      "price": 0
+    },
+    {
+      "id": 59,
+      "name": "Flower White",
+      "description": "Flower White",
+      "slug": ["flower-white"],
+      "image": "flower-white-mf-w-014.jpg",
+      "category": "Flower",
+      "code": "MF_W_014",
+      "price": 0
+    },
+    {
+      "id": 60,
+      "name": "Flower Pink",
+      "description": "Flower Pink",
+      "slug": ["flower-pink"],
+      "image": "flower-pink-mf-pk-015.jpg",
+      "category": "Flower",
+      "code": "MF_PK_015",
+      "price": 0
+    },
+    {
+      "id": 61,
+      "name": "Flower Green",
+      "description": "Flower Green",
+      "slug": ["flower-green"],
+      "image": "flower-green-mf-gn-016.jpg",
+      "category": "Flower",
+      "code": "MF_GN_016",
+      "price": 0
+    },
+    {
+      "id": 62,
+      "name": "Bouquet White",
+      "description": "Bouquet White",
+      "slug": ["bouquet-white"],
+      "image": "bouquet-white-mf-bw-017.jpg",
+      "category": "Bouquet",
+      "code": "MF_BW_017",
+      "price": 0
+    },
+    {
+      "id": 63,
+      "name": "Bouquet Pink",
+      "description": "Bouquet Pink",
+      "slug": ["bouquet-pink"],
+      "image": "bouquet-pink-mf-bp-018.jpg",
+      "category": "Bouquet",
+      "code": "MF_BP_018",
+      "price": 0
+    },
+    {
+      "id": 64,
+      "name": "Bouquet White Red",
+      "description": "Bouquet White Red",
+      "slug": ["bouquet-white-red"],
+      "image": "bouquet-white-red-mf-bwr-019.jpg",
+      "category": "Bouquet",
+      "code": "MF_BWR_019",
+      "price": 0
+    },
+    {
+      "id": 65,
+      "name": "Bouquet White Pink",
+      "description": "Bouquet White Pink",
+      "slug": ["bouquet-white-pink"],
+      "image": "bouquet-white-pink-mf-bwp-020.jpg",
+      "category": "Bouquet",
+      "code": "MF_BWP_020",
+      "price": 0
+    },
+    {
+      "id": 66,
+      "name": "Mums Peach",
+      "description": "Mums Peach",
+      "slug": ["mums-peach"],
+      "image": "mums-peach-mm-ph-001.jpg",
+      "category": "Mums",
+      "code": "MM_PH_001",
+      "price": 0
+    },
+    {
+      "id": 67,
+      "name": "Mums Pink",
+      "description": "Mums Pink",
+      "slug": ["mums-pink"],
+      "image": "mums-pink-mm-pk-002.jpg",
+      "category": "Mums",
+      "code": "MM_PK_002",
+      "price": 0
+    },
+    {
+      "id": 68,
+      "name": "Mums White",
+      "description": "Mums White",
+      "slug": ["mums-white"],
+      "image": "mums-white-mm-we-003.jpg",
+      "category": "Mums",
+      "code": "MM_WE_003",
+      "price": 0
+    },
+    {
+      "id": 69,
+      "name": "Mums Yellow",
+      "description": "Mums Yellow",
+      "slug": ["mums-yellow"],
+      "image": "mums-yellow-mm-yw-004.jpg",
+      "category": "Mums",
+      "code": "MM_YW_004",
+      "price": 0
+    },
+    {
+      "id": 70,
+      "name": "Mums Maroon",
+      "description": "Mums Maroon",
+      "slug": ["mums-maroon"],
+      "image": "mums-maroon-mm-mn-005.jpg",
+      "category": "Mums",
+      "code": "MM_MN_005",
+      "price": 0
+    },
+    {
+      "id": 71,
+      "name": "Mums Lavender",
+      "description": "Mums Lavender",
+      "slug": ["mums-lavender"],
+      "image": "mums-lavender-mm-lr-006.jpg",
+      "category": "Mums",
+      "code": "MM_LR_006",
+      "price": 0
+    },
+    {
+      "id": 72,
+      "name": "Mums Red",
+      "description": "Mums Red",
+      "slug": ["mums-red"],
+      "image": "mums-red-mm-rd-007.jpg",
+      "category": "Mums",
+      "code": "MM_RD_007",
+      "price": 0
+    },
+    {
+      "id": 73,
+      "name": "Carnation Pink",
+      "description": "Carnation Pink",
+      "slug": ["carnation-pink"],
+      "image": "carnation-pink-mc-pk-001.jpg",
+      "category": "Carnation",
+      "code": "MC_PK_001",
+      "price": 0
+    },
+    {
+      "id": 74,
+      "name": "Carnation Yellow",
+      "description": "Carnation Yellow",
+      "slug": ["carnation-yellow"],
+      "image": "carnation-yellow-mc-yw-002.jpg",
+      "category": "Carnation",
+      "code": "MC_YW_002",
+      "price": 0
+    },
+    {
+      "id": 75,
+      "name": "Carnation Lavender",
+      "description": "Carnation Lavender",
+      "slug": ["carnation-lavender"],
+      "image": "carnation-lavender-mc-lr-003.jpg",
+      "category": "Carnation",
+      "code": "MC_LR_003",
+      "price": 0
+    },
+    {
+      "id": 76,
+      "name": "Carnation White",
+      "description": "Carnation White",
+      "slug": ["carnation-white"],
+      "image": "carnation-white-mc-we-004.jpg",
+      "category": "Carnation",
+      "code": "MC_WE_004",
+      "price": 0
+    },
+    {
+      "id": 77,
+      "name": "Carnation Red",
+      "description": "Carnation Red",
+      "slug": ["carnation-red"],
+      "image": "carnation-red-mc-rd-005.jpg",
+      "category": "Carnation",
+      "code": "MC_RD_005",
+      "price": 0
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouquet Collection - MSR Tent Mart</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- MSR Tent Mart Custom Stylesheets -->
+    <link href="assets/css/variables-theme.css" rel="stylesheet">
+    <link href="assets/css/globals.css" rel="stylesheet">
+    <link href="assets/css/index.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Category Header -->
+        <section class="hero-section" style="background-image: url('assets/images/products/bouquet-white-ms-w-001.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <div style="max-width: 56rem;">
+                    <span class="hero-badge">Floral Collection</span>
+                    <h2 class="hero-title">
+                        Bouquet <span class="accent">Collection</span>
+                    </h2>
+                    <p class="hero-description">
+                        Stunning floral bouquets that add elegance and beauty to your event decorations, perfect for centerpieces and special arrangements.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="index.html#contact" class="btn btn-hero btn-hero-primary">Inquire Now</a>
+                        <a href="index.html" class="btn btn-hero btn-hero-secondary">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="services-section">
+            <div class="container-max mx-auto px-responsive">
+                <div class="text-center mb-5">
+                    <div class="section-label">Bouquet Collection</div>
+                    <h2 class="section-title">Floral Bouquets</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="row gap-responsive" id="products-grid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        // Load product data
+        async function loadProducts() {
+            try {
+                const response = await fetch('assets/json/product_list.json');
+                const data = await response.json();
+                const bouquetProducts = data.products.filter(product => product.category === 'Bouquet');
+
+                const productsGrid = document.getElementById('products-grid');
+                productsGrid.innerHTML = bouquetProducts.map(product => `
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-image" style="background-image: url('${data.imgBasePath}${product.image}');">
+                                <div class="product-code">${product.code}</div>
+                            </div>
+                            <h4>${product.name}</h4>
+                            <p>${product.description}</p>
+                            <div class="product-price">₹${product.price}</div>
+                            <a href="index.html#contact" class="btn btn-sm btn-outline-primary mt-2">Inquire</a>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading products:', error);
+            }
+        }
+
+        // Add fade-in animation to page elements on load
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadComponents();
+            loadProducts();
+
+            // Animate page sections
+            const sections = document.querySelectorAll('section');
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Mobile menu close on link click
+            const navLinks = document.querySelectorAll('.nav-link-desktop');
+            const mainNav = document.getElementById('main-nav');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
