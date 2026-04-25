@@ -2,8 +2,14 @@ msr-tent-mart
 │
 ├── index.html
 ├── about/index.html
-├── services/index.html
-├── gallery/index.html
+├── categories/
+│   ├── bouquet.html
+│   ├── carnation.html
+│   ├── flower.html
+│   ├── mate.html
+│   ├── mums.html
+│   ├── screen.html
+│   └── sofa.html
 ├── contact/index.html
 │
 ├── assets
@@ -23,6 +29,8 @@ msr-tent-mart
 │
 └── README.txt
 
+
+All category pages are now located in the `categories/` folder. All links to these pages in the site open in a new tab for better navigation.
 
 Hero Background	assets/images/gallery/hero-section.jpg
 Service 1	assets/images/gallery/luxury-tents.jpg

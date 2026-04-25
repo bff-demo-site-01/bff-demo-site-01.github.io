@@ -1,10 +1,26 @@
 // Common shared application logic for loading header/footer partials
 
+// WhatsApp configuration
+const WHATSAPP_NUMBER = '9514773633';
+
+function redirectToWhatsApp(productName, productCode) {
+    const message = `Hi,\nmore information about this product\n\n${productName}, ${productCode}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+}
+
 async function loadComponents() {
+    // Determine the base path based on current location
+    // Only categories/ and products/ folders need ../ to reach layout/
+    const pathParts = window.location.pathname.split('/');
+    const isInSubfolder = pathParts.includes('categories') || pathParts.includes('products');
+    const basePath = isInSubfolder ? '../' : './';
+    
     try {
         const [headerResponse, footerResponse] = await Promise.all([
-            fetch('layout/header.html'),
-            fetch('layout/footer.html')
+            fetch(basePath + 'layout/header.html'),
+            fetch(basePath + 'layout/footer.html')
         ]);
 
         if (!headerResponse.ok || !footerResponse.ok) {
