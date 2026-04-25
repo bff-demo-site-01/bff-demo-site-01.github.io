@@ -1,7 +1,7 @@
 // Common shared application logic for loading header/footer partials
 
 // WhatsApp configuration
-const WHATSAPP_NUMBER = '9514773633';
+const WHATSAPP_NUMBER = '6384500051';
 
 function redirectToWhatsApp(productName, productCode) {
     const message = `Hi,\nmore information about this product\n\n${productName}, ${productCode}`;
