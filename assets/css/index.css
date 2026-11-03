@@ -59,8 +59,8 @@ header {
     display: block;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    padding: 2px;
-    object-fit: cover;
+    padding: 4px;
+    object-fit: contain;
 }
 
 .nav-logo:hover img {
@@ -121,8 +121,8 @@ header {
         width: 60px;
         height: 60px;
         border: 2px solid #2d6a2d;
-        padding: 2px;
-        object-fit: cover;
+        padding: 4px;
+        object-fit: contain;
     }
 
     .hamburger {
