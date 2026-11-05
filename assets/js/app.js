@@ -7,16 +7,11 @@
 // 1. CONFIGURATION & STATE
 // ==========================================
 const CATALOGUE_CONFIG = {
-    // WhatsApp destination configuration
-    // RELEASE BLOCKER: The final international-format WhatsApp destination is UNCONFIRMED.
-    // Candidate numbers found in source materials:
-    //   1) 6384500051 (bare 10-digit number from dummy setup & showroom poster)
-    //   2) 8838318549 (second showroom contact number from poster)
-    // Requires client confirmation with country code (e.g. +91...) before live sending is enabled.
-    whatsappNumber: '',
-    whatsappCandidateNumbers: ['+91 6384500051', '+91 8838318549'],
-    whatsappStatus: 'UNCONFIRMED_DESTINATION',
-    whatsappEnabled: false,
+    // Official WhatsApp destination enabled as confirmed by client (6384500051 -> +91 6384500051)
+    whatsappNumber: '916384500051',
+    whatsappCandidateNumbers: ['+91 6384500051'],
+    whatsappStatus: 'CONFIRMED',
+    whatsappEnabled: true,
     currencySymbol: '₹',
     missingPriceLabel: 'Price on Request',
     catalogueJsonPath: 'assets/json/product_list.json'
@@ -95,11 +90,16 @@ async function handleProductEnquiry(productCode) {
         const message = buildEnquiryMessage(product, category);
 
         if (CATALOGUE_CONFIG.whatsappEnabled && CATALOGUE_CONFIG.whatsappNumber) {
+            const cleanNumber = String(CATALOGUE_CONFIG.whatsappNumber).replace(/\D/g, '');
+            const waNumber = (cleanNumber.length === 10) ? ('91' + cleanNumber) : cleanNumber;
             const encoded = encodeURIComponent(message);
-            const waUrl = `https://wa.me/${CATALOGUE_CONFIG.whatsappNumber}?text=${encoded}`;
-            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            const waUrl = `https://wa.me/${waNumber}?text=${encoded}`;
+            const win = window.open(waUrl, '_blank', 'noopener,noreferrer');
+            if (!win || win.closed || typeof win.closed === 'undefined') {
+                window.location.href = waUrl;
+            }
         } else {
-            // Unconfirmed destination notice modal (release blocker)
+            // Fallback notice modal
             showEnquiryNoticeModal(product, message);
         }
     } catch (e) {
@@ -121,8 +121,6 @@ function showEnquiryNoticeModal(product, message) {
         document.body.appendChild(modalBackdrop);
     }
 
-    const candidateList = CATALOGUE_CONFIG.whatsappCandidateNumbers.map(n => `<code>${escapeHtml(n)}</code>`).join(' or ');
-
     modalBackdrop.innerHTML = `
         <div class="enquiry-modal-card" role="dialog" aria-modal="true" aria-labelledby="enquiry-modal-title">
             <button class="enquiry-modal-close" aria-label="Close modal" onclick="closeEnquiryModal()">&times;</button>
@@ -132,15 +130,15 @@ function showEnquiryNoticeModal(product, message) {
                 <span class="badge bg-secondary">${escapeHtml(product.code)}</span>
             </div>
             
-            <div class="alert alert-warning py-2 px-3 small" role="alert">
-                <i class="fas fa-exclamation-triangle me-1"></i>
-                <strong>Release Blocker Notice:</strong> The final WhatsApp business number (${candidateList}) is awaiting client confirmation of international format before live direct-connect is enabled.
+            <div class="alert alert-info py-2 px-3 small mb-3" role="alert">
+                <i class="fas fa-info-circle me-1"></i>
+                Online enquiry is temporarily unavailable. Please check back soon.
             </div>
 
             <p class="small text-muted mb-2">Your prefilled enquiry message for <strong>${escapeHtml(product.name)}</strong>:</p>
             <div class="enquiry-message-preview" id="enquiry-preview-text">${escapeHtml(message)}</div>
 
-            <div class="d-flex gap-2 justify-content-end mt-4">
+            <div class="enquiry-modal-actions">
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick="closeEnquiryModal()">Close</button>
                 <button type="button" class="btn btn-sm btn-primary" onclick="copyEnquiryMessage()">
                     <i class="fas fa-copy me-1"></i> Copy Enquiry Message
@@ -153,6 +151,7 @@ function showEnquiryNoticeModal(product, message) {
     `;
 
     modalBackdrop.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
 function closeEnquiryModal() {
@@ -160,6 +159,7 @@ function closeEnquiryModal() {
     if (modalBackdrop) {
         modalBackdrop.style.display = 'none';
     }
+    document.body.style.overflow = '';
 }
 
 function copyEnquiryMessage() {
@@ -467,22 +467,43 @@ async function initHomePage() {
     try {
         const data = await fetchCatalogueData();
         const servicesRow = document.querySelector('#services .row.gap-responsive');
-        if (!servicesRow) return;
-
-        // Render dynamic category cards
-        servicesRow.innerHTML = data.categories.map(c => `
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('${resolveAssetPath(c.heroImage)}');">
-                        <i class="${c.icon} position-absolute top-50 start-50 translate-middle"></i>
+        if (servicesRow) {
+            // Render dynamic category cards
+            servicesRow.innerHTML = data.categories.map(c => `
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-image" style="background-image: url('${resolveAssetPath(c.heroImage)}');">
+                            <i class="${c.icon} position-absolute top-50 start-50 translate-middle"></i>
+                        </div>
+                        <h4>${escapeHtml(c.name)} Collection</h4>
+                        <p>${escapeHtml(c.description)}</p>
+                        <span class="badge bg-light text-dark mb-2">${c.productCount} items</span>
+                        <a href="${resolveAssetPath(c.pageUrl)}" class="btn btn-sm btn-outline-primary mt-2">View Collection</a>
                     </div>
-                    <h4>${escapeHtml(c.name)} Collection</h4>
-                    <p>${escapeHtml(c.description)}</p>
-                    <span class="badge bg-light text-dark mb-2">${c.productCount} items</span>
-                    <a href="${resolveAssetPath(c.pageUrl)}" class="btn btn-sm btn-outline-primary mt-2">View Collection</a>
                 </div>
-            </div>
-        `).join('');
+            `).join('');
+        }
+
+        // Contact form honest handling (Part 1.4)
+        const contactForm = document.getElementById('home-contact-form') || document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let alertBox = document.getElementById('home-contact-alert');
+                if (!alertBox) {
+                    alertBox = document.createElement('div');
+                    alertBox.id = 'home-contact-alert';
+                    alertBox.className = 'alert alert-info py-2 px-3 small mt-3';
+                    alertBox.role = 'alert';
+                    contactForm.appendChild(alertBox);
+                }
+                alertBox.innerHTML = '<i class="fas fa-info-circle me-1"></i> Online enquiry is temporarily unavailable. Please check back soon.';
+                alertBox.style.display = 'block';
+                if (alertBox.scrollIntoView) {
+                    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
     } catch (err) {
         console.error('Failed to init homepage services:', err);
     }

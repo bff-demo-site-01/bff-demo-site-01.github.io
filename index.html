@@ -1,485 +1,440 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSR Tent Mart & Decoration Materials</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- MSR Tent Mart Custom Stylesheets -->
-    <link href="assets/css/variables-theme.css" rel="stylesheet">
-    <link href="assets/css/globals.css" rel="stylesheet">
-    <link href="assets/css/index.css" rel="stylesheet">
-    <link href="assets/css/catalogue.css" rel="stylesheet">
-</head>
-<body>
-        <header>
-        <!-- Sticky Navigation Bar -->
-        <nav class="navbar navbar-desktop sticky-top" id="main-nav">
-            <ul class="nav-left list-unstyled mb-0">
-                <li><a class="nav-link-desktop" href="index.html">Home</a></li>
-                <li><a class="nav-link-desktop" href="index.html#services">Collections</a></li>
-                <li><a class="nav-link-desktop" href="products/index.html">Our Products</a></li>
-            </ul>
-
-            <a href="index.html" class="nav-logo">
-                <img src="assets/images/msr-tent-mart-logo-1.png" alt="MSR Tent Mart Logo" />
-            </a>
-
-            <ul class="nav-right list-unstyled mb-0">
-                <li><a class="nav-link-desktop" href="index.html#gallery">Gallery</a></li>
-                <li><a class="nav-link-desktop" href="index.html#contact">Contact</a></li>
-            </ul>
-
-            <!-- Mobile only -->
-            <button class="hamburger d-lg-none" aria-label="Toggle menu" type="button" onclick="document.getElementById('main-nav').classList.toggle('open')">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section" style="background-image: url('assets/images/gallery/msr-tent-mart-hero-img.png');" >
-            <div class="hero-content">
-                <div style="max-width: 56rem;">
-                    <span class="hero-badge">Premium Event Solutions</span>
-                    <h2 class="hero-title">
-                        Crafting Unforgettable <span class="accent">Event Spaces</span>
-                    </h2>
-                    <p class="hero-description">
-                        The ultimate destination for luxury tents, sophisticated decor materials, and bespoke event styling that leaves a lasting impression.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#services" class="btn btn-hero btn-hero-primary">View Collections</a>
-                        <a href="#gallery" class="btn btn-hero btn-hero-secondary">Our Gallery</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Services -->
-        <section class="services-section" id="services">
-            <div class="container-max mx-auto px-responsive">
-                <div class="text-center mb-5">
-                    <div class="section-label">What We Offer</div>
-                    <h2 class="section-title">Our Featured Services</h2>
-                    <div class="section-divider"></div>
-                </div>
-
-                <div class="row gap-responsive mt-5">
-                    <!-- Sofa Category -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="service-card">
-                            <div class="service-image" style="background-image: url('assets/images/products/sofa-white-ms-w1-001.jpg');">
-                                <i class="fas fa-couch position-absolute top-50 start-50 translate-middle"></i>
-                            </div>
-                            <h4>Sofa Collection</h4>
-                            <p>Premium sofa sets for elegant seating arrangements.</p>
-                            <a href="categories/sofa.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
-                        </div>
-                    </div>
-
-                    <!-- Mate Category -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="service-card">
-                            <div class="service-image" style="background-image: url('assets/images/products/mate-5223-grey-mm-gy-001.jpg');">
-                                <i class="fas fa-chair position-absolute top-50 start-50 translate-middle"></i>
-                            </div>
-                            <h4>Mate Collection</h4>
-                            <p>Traditional mate seating for cultural events.</p>
-                            <a href="categories/mate.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
-                        </div>
-                    </div>
-
-                    <!-- Screen Category -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="service-card">
-                            <div class="service-image" style="background-image: url('assets/images/products/screen-white-ms-w-001.jpg');">
-                                <i class="fas fa-expand position-absolute top-50 start-50 translate-middle"></i>
-                            </div>
-                            <h4>Screen Collection</h4>
-                            <p>Decorative screens for privacy and ambiance.</p>
-                            <a href="categories/screen.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
-                        </div>
-                    </div>
-
-                    <!-- Flower Category -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="service-card">
-                            <div class="service-image" style="background-image: url('assets/images/products/flower-pink-rose-mf-pr-001.jpg');">
-                                <i class="fas fa-flower position-absolute top-50 start-50 translate-middle"></i>
-                            </div>
-                            <h4>Flower Collection</h4>
-                            <p>Beautiful floral arrangements and decorations.</p>
-                            <a href="categories/flower.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
-                        </div>
-                    </div>
-
-                    <!-- Bouquet Category -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="service-card">
-                            <div class="service-image" style="background-image: url('assets/images/products/bouquet-white-mf-bw-017.jpg');">
-                                <i class="fas fa-seedling position-absolute top-50 start-50 translate-middle"></i>
-                            </div>
-                            <h4>Bouquet Collection</h4>
-                            <p>Exquisite bouquets for special occasions.</p>
-                            <a href="categories/bouquet.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
-                        </div>
-                    </div>
-
-                    <!-- Mums Category -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="service-card">
-                            <div class="service-image" style="background-image: url('assets/images/products/mums-peach-mm-ph-001.jpg');">
-                                <i class="fas fa-spa position-absolute top-50 start-50 translate-middle"></i>
-                            </div>
-                            <h4>Mums Collection</h4>
-                            <p>Chrysanthemum flowers for elegant decor.</p>
-                            <a href="categories/mums.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
-                        </div>
-                    </div>
-
-                    <!-- Carnation Category -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="service-card">
-                            <div class="service-image" style="background-image: url('assets/images/products/carnation-pink-mc-pk-001.jpg');">
-                                <i class="fas fa-leaf position-absolute top-50 start-50 translate-middle"></i>
-                            </div>
-                            <h4>Carnation Collection</h4>
-                            <p>Classic carnation arrangements.</p>
-                            <a href="categories/carnation.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us -->
-        <section class="why-choose-section">
-            <div class="container-max mx-auto px-responsive">
-                <div class="row gap-responsive align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="experience-image" style="background-image: url('assets/images/gallery/experience.jpg');" >
-                            <div class="experience-badge">
-                                <div class="experience-badge-content">
-                                    <div class="experience-badge-icon">
-                                        <i class="fas fa-circle-check"></i>
-                                    </div>
-                                    <div class="experience-badge-text">
-                                        <h5>15+ Years Experience</h5>
-                                        <p>Industry leading event decor experts</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-6">
-                        <div class="section-label">Our Excellence</div>
-                        <h2 class="section-title why-choose-title">Why Choose MSR Tent Mart?</h2>
-                        <p class="why-choose-description">
-                            We don't just provide materials; we create experiences. Our commitment to quality and attention to detail makes us the preferred choice for premium event decorations.
-                        </p>
-
-                        <div class="why-choose-list">
-                            <div class="why-choose-item">
-                                <i class="fas fa-circle-check"></i>
-                                <div>
-                                    <h5>Premium Quality Materials</h5>
-                                    <p>We use only the finest fabrics and durable tent structures.</p>
-                                </div>
-                            </div>
-
-                            <div class="why-choose-item">
-                                <i class="fas fa-circle-check"></i>
-                                <div>
-                                    <h5>Customized Design Approach</h5>
-                                    <p>Every event is unique. We tailor our decor to your specific vision.</p>
-                                </div>
-                            </div>
-
-                            <div class="why-choose-item">
-                                <i class="fas fa-circle-check"></i>
-                                <div>
-                                    <h5>Reliable Setup & Execution</h5>
-                                    <p>Our team ensures timely setup and professional handling of all assets.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Gallery -->
-        <section class="gallery-section" id="gallery">
-            <div class="container-max mx-auto px-responsive">
-                <div class="gallery-header">
-                    <div>
-                        <div class="section-label">Our Gallery</div>
-                        <h2 class="section-title">Masterpieces We've Created</h2>
-                    </div>
-                    <a href="#" class="gallery-view-all">
-                        View All Projects
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="gallery-grid">
-                    <div class="gallery-item gallery-item-1" style="background-image: url('assets/images/products/sofa-white-ms-w1-001.jpg');" >
-                        <div class="gallery-item-content">
-                            <h5 class="fs-4">Sofa White</h5>
-                            <p>Premium Sofa Collection</p>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" style="background-image: url('assets/images/products/mate-5223-grey-mm-gy-001.jpg');">
-                        <div class="gallery-item-content">
-                            <h5>Mate 5223 Grey</h5>
-                            <p>Traditional Mate Collection</p>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" style="background-image: url('assets/images/products/flower-pink-rose-mf-pr-001.jpg');">
-                        <div class="gallery-item-content">
-                            <h5>Flower Pink Rose</h5>
-                            <p>Elegant Flower Collection</p>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item gallery-item-4" style="background-image: url('assets/images/products/carnation-pink-mc-pk-001.jpg');">
-                        <div class="gallery-item-content">
-                            <h5 class="fs-4">Carnation Pink</h5>
-                            <p>Classic Carnation Collection</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="testimonials-section">
-            <div class="container-max mx-auto px-responsive">
-                <i class="fas fa-quote-left" style="font-size: 3.75rem; color: rgba(197, 160, 89, 0.4); display: block; margin-bottom: 2rem;"></i>
-                <div style="max-width: 48rem; margin: 0 auto;">
-                    <p class="testimonial-quote">
-                        "MSR Tent Mart transformed our wedding venue into a fairytale. Their attention to detail with the drapery and lighting was beyond our expectations. Truly the best in the business!"
-                    </p>
-                    <div class="mt-5 d-flex flex-column align-items-center">
-                        <div class="testimonial-author-image" style="background-image: url('assets/images/gallery/testimonial-author.jpg');"></div>
-                        <h5 class="testimonial-author-name">Sarah Johnson</h5>
-                        <p class="testimonial-author-title">Private Wedding Client</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <div class="container-max mx-auto px-responsive">
-                <div class="row gap-responsive">
-                    <div class="col-12 col-lg-6">
-                        <div class="section-label">Contact Us</div>
-                        <h2 class="section-title">Let's Plan Your Next Event</h2>
-                        <p class="why-choose-description">
-                            Ready to start? Fill out the form or reach out directly via our contact details. Our team is ready to bring your vision to life.
-                        </p>
-
-                        <div class="mt-5">
-                            <div class="contact-info-item mb-4">
-                                <div class="contact-info-icon">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
-                                <div>
-                                    <h5>Our Showroom</h5>
-                                    <p>123 Decor Avenue, Industrial Area, New Delhi, India</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-info-item mb-4">
-                                <div class="contact-info-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <h5>Call Us</h5>
-                                    <p>+91 98765 43210 / +91 12345 67890</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-info-item">
-                                <div class="contact-info-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h5>Email</h5>
-                                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d74737b725d706e6f69787369707c6f69337e7270">[email&#160;protected]</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-6">
-                        <div class="contact-form">
-                            <form>
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label>Your Name</label>
-                                        <input type="text" placeholder="John Doe">
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label>Phone Number</label>
-                                        <input type="tel" placeholder="+91 00000 00000">
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label>Email Address</label>
-                                    <input type="email" placeholder="john@example.com">
-                                </div>
-                                <div class="mb-3">
-                                    <label>Message</label>
-                                    <textarea placeholder="Tell us about your event..." rows="4"></textarea>
-                                </div>
-                                <button type="submit" class="w-100">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="map-container mt-5">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.8392319277!2d77.06889754725782!3d28.527213143360824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b34766247%3A0x87d035b5170739e!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1715690000000!5m2!1sen!2sin">
-                    </iframe>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container-max mx-auto px-responsive">
-            <div class="footer-top-row">
-                <div class="col-span-1 md:col-span-1">
-                    <div class="footer-brand">
-                        <div class="footer-brand-icon">
-                            <i class="fas fa-gopuram"></i>
-                        </div>
-                        <h1>MSR TENT MART</h1>
-                    </div>
-                    <p class="footer-description">
-                        Setting the standard for premium event materials and tent solutions since 2008. Making every celebration extraordinary.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.947.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.947-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h5>Quick Links</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#services">Collections</a></li>
-                        <li><a href="products/index.html">Our Products</a></li>
-                        <li><a href="index.html#gallery">Gallery</a></li>
-                        <li><a href="index.html#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h5>Categories</h5>
-                    <ul>
-                        <li><a href="categories/sofa.html" target="_blank" rel="noopener">Sofa Collection</a></li>
-                        <li><a href="categories/mate.html" target="_blank" rel="noopener">Mate Collection</a></li>
-                        <li><a href="categories/screen.html" target="_blank" rel="noopener">Screen Collection</a></li>
-                        <li><a href="categories/flower.html" target="_blank" rel="noopener">Flower Collection</a></li>
-                        <li><a href="categories/bouquet.html" target="_blank" rel="noopener">Bouquet Collection</a></li>
-                        <li><a href="categories/mums.html" target="_blank" rel="noopener">Mums Collection</a></li>
-                        <li><a href="categories/carnation.html" target="_blank" rel="noopener">Carnation Collection</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h5>Newsletter</h5>
-                    <p>Stay updated with our latest designs.</p>
-                    <div class="footer-newsletter-form">
-                        <input type="email" placeholder="Email Address">
-                        <button>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom-row">
-                <p>© 2024 MSR Tent Mart & Decoration Materials. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/js/app.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', async function() {
-            await loadComponents();
-            await initHomePage();
-
-            // Animate page sections
-            const sections = document.querySelectorAll('section');
-            const observerOptions = {
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // Mobile menu close on link click
-            const navLinks = document.querySelectorAll('.nav-link-desktop');
-            const mainNav = document.getElementById('main-nav');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mainNav.classList.remove('open');
-                });
-            });
-        });
-    </script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSR Tent Mart & Decoration Materials</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- MSR Tent Mart Custom Stylesheets -->
+    <link href="assets/css/variables-theme.css" rel="stylesheet">
+    <link href="assets/css/globals.css" rel="stylesheet">
+    <link href="assets/css/index.css" rel="stylesheet">
+    <link href="assets/css/catalogue.css" rel="stylesheet">
+</head>
+<body>
+        <header>
+        <!-- Sticky Navigation Bar -->
+        <nav class="navbar navbar-desktop sticky-top" id="main-nav">
+            <ul class="nav-left list-unstyled mb-0">
+                <li><a class="nav-link-desktop" href="index.html">Home</a></li>
+                <li><a class="nav-link-desktop" href="index.html#services">Collections</a></li>
+                <li><a class="nav-link-desktop" href="products/index.html">Our Products</a></li>
+            </ul>
+
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/msr-tent-mart-logo-1.png" alt="MSR Tent Mart Logo" />
+            </a>
+
+            <ul class="nav-right list-unstyled mb-0">
+                <li><a class="nav-link-desktop" href="index.html#gallery">Gallery</a></li>
+                <li><a class="nav-link-desktop" href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <!-- Mobile only -->
+            <button class="hamburger d-lg-none" aria-label="Toggle menu" type="button" onclick="document.getElementById('main-nav').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" style="background-image: url('assets/images/gallery/msr-tent-mart-hero-img.png');" >
+            <div class="hero-content">
+                <div style="max-width: 56rem;">
+                    <span class="hero-badge">Premium Event Solutions</span>
+                    <h2 class="hero-title">
+                        Crafting Unforgettable <span class="accent">Event Spaces</span>
+                    </h2>
+                    <p class="hero-description">
+                        The ultimate destination for luxury tents, sophisticated decor materials, and bespoke event styling that leaves a lasting impression.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-hero btn-hero-primary">View Collections</a>
+                        <a href="#gallery" class="btn btn-hero btn-hero-secondary">Our Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Services -->
+        <section class="services-section" id="services">
+            <div class="container-max mx-auto px-responsive">
+                <div class="text-center mb-5">
+                    <div class="section-label">What We Offer</div>
+                    <h2 class="section-title">Our Featured Services</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="row gap-responsive mt-5">
+                    <!-- Sofa Category -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="service-image" style="background-image: url('assets/images/products/sofa-white-ms-w1-001.jpg');">
+                                <i class="fas fa-couch position-absolute top-50 start-50 translate-middle"></i>
+                            </div>
+                            <h4>Sofa Collection</h4>
+                            <p>Premium sofa sets for elegant seating arrangements.</p>
+                            <a href="categories/sofa.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
+                        </div>
+                    </div>
+
+                    <!-- Mate Category -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="service-image" style="background-image: url('assets/images/products/mate-5223-grey-mm-gy-001.jpg');">
+                                <i class="fas fa-chair position-absolute top-50 start-50 translate-middle"></i>
+                            </div>
+                            <h4>Mate Collection</h4>
+                            <p>Traditional mate seating for cultural events.</p>
+                            <a href="categories/mate.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
+                        </div>
+                    </div>
+
+                    <!-- Screen Category -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="service-image" style="background-image: url('assets/images/products/screen-white-ms-w-001.jpg');">
+                                <i class="fas fa-expand position-absolute top-50 start-50 translate-middle"></i>
+                            </div>
+                            <h4>Screen Collection</h4>
+                            <p>Decorative screens for privacy and ambiance.</p>
+                            <a href="categories/screen.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
+                        </div>
+                    </div>
+
+                    <!-- Flower Category -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="service-image" style="background-image: url('assets/images/products/flower-pink-rose-mf-pr-001.jpg');">
+                                <i class="fas fa-flower position-absolute top-50 start-50 translate-middle"></i>
+                            </div>
+                            <h4>Flower Collection</h4>
+                            <p>Beautiful floral arrangements and decorations.</p>
+                            <a href="categories/flower.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
+                        </div>
+                    </div>
+
+                    <!-- Bouquet Category -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="service-image" style="background-image: url('assets/images/products/bouquet-white-mf-bw-017.jpg');">
+                                <i class="fas fa-seedling position-absolute top-50 start-50 translate-middle"></i>
+                            </div>
+                            <h4>Bouquet Collection</h4>
+                            <p>Exquisite bouquets for special occasions.</p>
+                            <a href="categories/bouquet.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
+                        </div>
+                    </div>
+
+                    <!-- Mums Category -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="service-image" style="background-image: url('assets/images/products/mums-peach-mm-ph-001.jpg');">
+                                <i class="fas fa-spa position-absolute top-50 start-50 translate-middle"></i>
+                            </div>
+                            <h4>Mums Collection</h4>
+                            <p>Chrysanthemum flowers for elegant decor.</p>
+                            <a href="categories/mums.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
+                        </div>
+                    </div>
+
+                    <!-- Carnation Category -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="service-image" style="background-image: url('assets/images/products/carnation-pink-mc-pk-001.jpg');">
+                                <i class="fas fa-leaf position-absolute top-50 start-50 translate-middle"></i>
+                            </div>
+                            <h4>Carnation Collection</h4>
+                            <p>Classic carnation arrangements.</p>
+                            <a href="categories/carnation.html" class="btn btn-sm btn-outline-primary mt-2" target="_blank" rel="noopener">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose-section">
+            <div class="container-max mx-auto px-responsive">
+                <div class="row gap-responsive align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="experience-image" style="background-image: url('assets/images/gallery/experience.jpg');" >
+                            <div class="experience-badge">
+                                <div class="experience-badge-content">
+                                    <div class="experience-badge-icon">
+                                        <i class="fas fa-circle-check"></i>
+                                    </div>
+                                    <div class="experience-badge-text">
+                                        <h5>Premium Event Decor</h5>
+                                        <p>Quality materials for memorable celebrations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="section-label">Our Excellence</div>
+                        <h2 class="section-title why-choose-title">Why Choose MSR Tent Mart?</h2>
+                        <p class="why-choose-description">
+                            We don't just provide materials; we create experiences. Our commitment to quality and attention to detail makes us the preferred choice for premium event decorations.
+                        </p>
+
+                        <div class="why-choose-list">
+                            <div class="why-choose-item">
+                                <i class="fas fa-circle-check"></i>
+                                <div>
+                                    <h5>Premium Quality Materials</h5>
+                                    <p>We use only the finest fabrics and durable tent structures.</p>
+                                </div>
+                            </div>
+
+                            <div class="why-choose-item">
+                                <i class="fas fa-circle-check"></i>
+                                <div>
+                                    <h5>Customized Design Approach</h5>
+                                    <p>Every event is unique. We tailor our decor to your specific vision.</p>
+                                </div>
+                            </div>
+
+                            <div class="why-choose-item">
+                                <i class="fas fa-circle-check"></i>
+                                <div>
+                                    <h5>Reliable Setup & Execution</h5>
+                                    <p>Our team ensures timely setup and professional handling of all assets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Gallery -->
+        <section class="gallery-section" id="gallery">
+            <div class="container-max mx-auto px-responsive">
+                <div class="gallery-header">
+                    <div>
+                        <div class="section-label">Our Gallery</div>
+                        <h2 class="section-title">Masterpieces We've Created</h2>
+                    </div>
+                    <a href="#" class="gallery-view-all">
+                        View All Projects
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item gallery-item-1" style="background-image: url('assets/images/products/sofa-white-ms-w1-001.jpg');" >
+                        <div class="gallery-item-content">
+                            <h5 class="fs-4">Sofa White</h5>
+                            <p>Premium Sofa Collection</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" style="background-image: url('assets/images/products/mate-5223-grey-mm-gy-001.jpg');">
+                        <div class="gallery-item-content">
+                            <h5>Mate 5223 Grey</h5>
+                            <p>Traditional Mate Collection</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" style="background-image: url('assets/images/products/flower-pink-rose-mf-pr-001.jpg');">
+                        <div class="gallery-item-content">
+                            <h5>Flower Pink Rose</h5>
+                            <p>Elegant Flower Collection</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item gallery-item-4" style="background-image: url('assets/images/products/carnation-pink-mc-pk-001.jpg');">
+                        <div class="gallery-item-content">
+                            <h5 class="fs-4">Carnation Pink</h5>
+                            <p>Classic Carnation Collection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container-max mx-auto px-responsive">
+                <div class="row gap-responsive">
+                    <div class="col-12 col-lg-6">
+                        <div class="section-label">Contact Us</div>
+                        <h2 class="section-title">Let's Plan Your Next Event</h2>
+                        <p class="why-choose-description">
+                            Planning your next celebration? Explore our product collections or send an inquiry below.
+                        </p>
+
+                        <div class="mt-4 p-4 rounded-3 border border-secondary-subtle bg-light text-muted">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-clock text-warning fs-4 me-3"></i>
+                                <h5 class="mb-0 fw-semibold text-dark">Contact Details Being Updated</h5>
+                            </div>
+                            <p class="mb-0 small">
+                                Our official showroom location, phone lines, and email contact information are currently being updated. Please check back soon for verified contact channels.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="contact-form">
+                            <form id="home-contact-form">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label>Your Name</label>
+                                        <input type="text" placeholder="John Doe">
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label>Phone Number</label>
+                                        <input type="tel" placeholder="+91 00000 00000">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Email Address</label>
+                                    <input type="email" placeholder="john@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Message</label>
+                                    <textarea placeholder="Tell us about your event..." rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="w-100">Send Message</button>
+                                <div id="home-contact-alert" class="alert alert-info py-2 px-3 small mt-3" style="display:none;" role="alert"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-max mx-auto px-responsive">
+            <div class="footer-top-row">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="footer-brand">
+                        <div class="footer-brand-icon">
+                            <i class="fas fa-gopuram"></i>
+                        </div>
+                        <h1>MSR TENT MART</h1>
+                    </div>
+                    <p class="footer-description">
+                        Setting the standard for premium event materials and tent solutions. Making every celebration extraordinary.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.947.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.947-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Collections</a></li>
+                        <li><a href="products/index.html">Our Products</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h5>Categories</h5>
+                    <ul>
+                        <li><a href="categories/sofa.html" target="_blank" rel="noopener">Sofa Collection</a></li>
+                        <li><a href="categories/mate.html" target="_blank" rel="noopener">Mate Collection</a></li>
+                        <li><a href="categories/screen.html" target="_blank" rel="noopener">Screen Collection</a></li>
+                        <li><a href="categories/flower.html" target="_blank" rel="noopener">Flower Collection</a></li>
+                        <li><a href="categories/bouquet.html" target="_blank" rel="noopener">Bouquet Collection</a></li>
+                        <li><a href="categories/mums.html" target="_blank" rel="noopener">Mums Collection</a></li>
+                        <li><a href="categories/carnation.html" target="_blank" rel="noopener">Carnation Collection</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <p>Stay updated with our latest designs.</p>
+                    <div class="footer-newsletter-form">
+                        <input type="email" placeholder="Email Address">
+                        <button>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <p>© 2024 MSR Tent Mart & Decoration Materials. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadComponents();
+            await initHomePage();
+
+            // Animate page sections
+            const sections = document.querySelectorAll('section');
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Mobile menu close on link click
+            const navLinks = document.querySelectorAll('.nav-link-desktop');
+            const mainNav = document.getElementById('main-nav');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('open');
+                });
+            });
+        });
+    </script>
+</body>
 </html>
