@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ============================================================
+         STEP 1: Set a unique title for this page.
+         Format: "Page Name - MSR Tent Mart"
+         ============================================================ -->
+    <title>PAGE TITLE - MSR Tent Mart</title>
+
+    <!-- ============================================================
+         STEP 2: Write a unique meta description under 160 characters.
+         Use only facts from the page content — no invented claims.
+         ============================================================ -->
+    <meta name="description" content="DESCRIPTION UNDER 160 CHARACTERS">
+
+    <!-- ============================================================
+         STEP 3: Set canonical URL.
+         Use the full public URL of this page on the live site.
+         ============================================================ -->
+    <link rel="canonical" href="https://bff-demo-site-01.github.io/PAGE-URL/">
+
+    <!-- ============================================================
+         STEP 4: Open Graph tags for social sharing.
+         Update title, description, and url to match this page.
+         Keep og:image pointing to an existing image in the repo.
+         ============================================================ -->
+    <meta property="og:title" content="PAGE TITLE - MSR Tent Mart">
+    <meta property="og:description" content="DESCRIPTION UNDER 160 CHARACTERS">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bff-demo-site-01.github.io/PAGE-URL/">
+    <meta property="og:image" content="https://bff-demo-site-01.github.io/assets/images/msr-tent-mart-logo-1.png">
+
+    <!-- JSON-LD: Organization only — no invented facts -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"MSR Tent Mart","url":"https://bff-demo-site-01.github.io/"}
+    </script>
+
+    <!-- ============================================================
+         Favicon & Icons
+         Paths below assume this page is ONE level deep (e.g. privacy/index.html).
+         If the page is at the root, change ../assets/ to assets/
+         ============================================================ -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
+    <meta name="theme-color" content="#800000">
+
+    <!-- ============================================================
+         Standard CSS stack — load in this order on every page.
+         Add a page-specific CSS file AFTER catalogue.css if needed.
+         ============================================================ -->
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- MSR Tent Mart CSS — always load in this order -->
+    <link href="../assets/css/variables-theme.css" rel="stylesheet">
+    <link href="../assets/css/globals.css" rel="stylesheet">
+    <link href="../assets/css/catalogue.css" rel="stylesheet">
+    <!-- Page-specific CSS: copy assets/css/template-page.css, rename it, and link it here -->
+    <!-- <link href="../assets/css/your-page.css" rel="stylesheet"> -->
+</head>
+<body>
+
+    <!-- Shared header loaded by JavaScript (do not edit layout/header.html here) -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- ============================================================
+             STEP 5: Add your page content here.
+             Use these shared classes from globals.css:
+               .container-max    — max-width content wrapper
+               .px-responsive    — responsive horizontal padding
+               .section-title    — gold-accented heading
+               .section-label    — small uppercase category label
+               .section-divider  — maroon rule under heading
+             Use variables from variables-theme.css for all colors.
+             Do not add new inline style="" attributes.
+             ============================================================ -->
+        <section class="services-section py-5">
+            <div class="container-max mx-auto px-responsive">
+
+                <div class="text-center mb-5">
+                    <p class="section-label">SECTION LABEL</p>
+                    <h1 class="section-title">Page Heading</h1>
+                    <div class="section-divider"></div>
+                </div>
+
+                <!-- Page content goes here -->
+                <p>Add your page content here.</p>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Shared footer loaded by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Site JS: handles header/footer loading and all site logic -->
+    <script src="../assets/js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            // Load shared header and footer
+            await loadComponents();
+        });
+    </script>
+
+</body>
+</html>
+

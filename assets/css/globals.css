@@ -679,3 +679,12 @@ a {
 .group:hover .group-hover\:scale-105 {
     transform: scale(1.05);
 }
+
+/* ==========================================
+   HERO CONTENT INNER MAX-WIDTH
+   ========================================== */
+
+.hero-content-inner {
+    max-width: 56rem;
+    width: 100%;
+}

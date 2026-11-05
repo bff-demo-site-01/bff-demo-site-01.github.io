@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://bff-demo-site-01.github.io/sitemap.xml
+

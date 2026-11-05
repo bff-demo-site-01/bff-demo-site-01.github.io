@@ -1,0 +1,78 @@
+# This file does nothing on GitHub Pages. It only works on Apache hosting.
+# Configuration for future Apache / cPanel deployment.
+
+# ----------------------------------------------------------------------
+# 1. Custom Error Documents
+# ----------------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------------
+# 2. Canonical Host & HTTPS Redirects (COMMENTED OUT)
+# ----------------------------------------------------------------------
+# Enable these once the custom domain and SSL certificate are active on Apache.
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     
+#     # Option A: Force HTTPS
+#     # RewriteCond %{HTTPS} !=on
+#     # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+#     
+#     # Option B: Force non-www (or choose www canonical based on client preference)
+#     # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#     # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# 3. Compression (mod_deflate)
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 4. Browser Caching (mod_expires)
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # Images: 1 year
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS & JavaScript: 1 month
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # JSON Data: 1 day
+    ExpiresByType application/json "access plus 1 day"
+
+    # HTML: 1 hour
+    ExpiresByType text/html "access plus 1 hour"
+
+    # Web Manifest & Fonts
+    ExpiresByType application/manifest+json "access plus 1 week"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+</IfModule>
+

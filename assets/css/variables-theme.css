@@ -38,6 +38,7 @@
     --bg-primary-light: rgba(128, 0, 0, 0.2);
     --bg-primary-lighter: rgba(128, 0, 0, 0.1);
     --bg-gold-light: rgba(197, 160, 89, 0.2);
+    --border-gold-light: rgba(197, 160, 89, 0.3); /* gold border tint */
     
     /* Typography */
     --font-primary: 'Manrope', sans-serif;
@@ -94,6 +95,58 @@
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
     --transition-slower: 0.7s ease;
+
+    /* Nav Accent (green border and hover) */
+    --nav-accent: #2d6a2d;
+    --nav-accent-shadow: rgba(45, 106, 45, 0.25);
+    
+    /* White utility */
+    --color-white: #ffffff;
+    
+    /* Neutral text: form labels, strong body text */
+    --text-neutral: #374151;
+    
+    /* Light border utility (non-primary) */
+    --border-muted: #e5e5e5;
+    --border-form-muted: #f0f0f0;
+    
+    /* Primary color hover / opacity variant */
+    --primary-hover: rgba(128, 0, 0, 0.9);
+    --primary-focus-ring: rgba(128, 0, 0, 0.1);
+    --primary-search-ring: rgba(128, 0, 0, 0.15);
+    
+    /* Product card image bg */
+    --bg-product-img: #f1f3f5;
+    --bg-product-img-dark: #181111;
+    
+    /* Overlay / badge bg */
+    --bg-badge-dark: rgba(35, 15, 15, 0.85);
+    --bg-overlay-dark: rgba(0, 0, 0, 0.6);
+    
+    /* Gallery hover overlay */
+    --gallery-hover-overlay: rgba(128, 0, 0, 0.8);
+    
+    /* Experience badge dark */
+    --bg-experience-dark: rgba(35, 15, 15, 0.9);
+    
+    /* Hero badge */
+    --bg-hero-badge: rgba(0, 0, 0, 0.55);
+    --hero-badge-text: #f5e6c8; /* warm cream for hero badge text */
+    
+    /* Hero description text */
+    --hero-desc-color: #e5e7eb;
+    
+    /* Contact form dark bg */
+    --bg-contact-form-dark: #1f2937;
+    --bg-contact-input-dark: #111827;
+
+    /* Border radius extra sizes */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.75rem;
+    --radius-2xl: 1.5rem;
+
+    /* Additional shadow */
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 /* ==========================================

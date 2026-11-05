@@ -1,6 +1,7 @@
 /* ==========================================
-   EXAMPLE: CONTACT PAGE STYLES
-   Template for creating new page-specific CSS files
+   MSR TENT MART - PAGE TEMPLATE STYLES
+   Template/example for creating new page-specific CSS files.
+   Copy this file, rename it, and use it for a new page.
    ========================================== */
 
 /* 
@@ -20,7 +21,7 @@
    ========================================== */
 
 .contact-page-header {
-    background: linear-gradient(135deg, var(--primary-color), rgba(128, 0, 0, 0.7));
+    background: linear-gradient(135deg, var(--primary-color), color-mix(in srgb, var(--primary-color) 70%, transparent));
     padding: var(--space-24) 0;
     color: white;
     animation: fadeIn var(--transition-base) ease-out;
@@ -52,7 +53,7 @@
 }
 
 body.dark-mode .contact-form-wrapper {
-    background-color: rgba(35, 15, 15, 0.9);
+    background-color: var(--bg-experience-dark);
 }
 
 .form-group-custom {
@@ -129,7 +130,7 @@ body.dark-mode .contact-info-card {
 .contact-info-icon-large {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, var(--primary-color), rgba(128, 0, 0, 0.7));
+    background: linear-gradient(135deg, var(--primary-color), color-mix(in srgb, var(--primary-color) 70%, transparent));
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
