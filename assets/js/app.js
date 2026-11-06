@@ -6,10 +6,23 @@
 // ==========================================
 // 1. CONFIGURATION & STATE
 // ==========================================
+const SITE_CONFIG = {
+    BUSINESS_NAME: 'MSR Tent Mart',
+    WHATSAPP_NUMBER: '916384500051',
+    WHATSAPP_DISPLAY: '+91 63845 00051',
+    BUSINESS_EMAIL: '', // If empty, email line is completely hidden
+    SOCIAL: {
+        linkedin: '',
+        instagram: 'https://www.instagram.com/msr.tentmart.decorations',
+        facebook: '',
+        youtube: '',
+        other: ''
+    }
+};
+
 const CATALOGUE_CONFIG = {
-    // Official WhatsApp destination enabled as confirmed by client (6384500051 -> +91 6384500051)
-    whatsappNumber: '916384500051',
-    whatsappCandidateNumbers: ['+91 6384500051'],
+    whatsappNumber: SITE_CONFIG.WHATSAPP_NUMBER,
+    whatsappCandidateNumbers: ['+91 63845 00051'],
     whatsappStatus: 'CONFIRMED',
     whatsappEnabled: true,
     currencySymbol: '₹',
@@ -27,7 +40,9 @@ function getBasePath() {
     const isSubfolder = path.includes('/categories/') || 
                         path.includes('/products/') || 
                         path.includes('/about/') || 
-                        path.includes('/contact/');
+                        path.includes('/contact/') || 
+                        path.includes('/privacy/') || 
+                        path.includes('/terms/');
     return isSubfolder ? '../' : './';
 }
 
@@ -483,30 +498,96 @@ async function initHomePage() {
                 </div>
             `).join('');
         }
-
-        // Contact form honest handling (Part 1.4)
-        const contactForm = document.getElementById('home-contact-form') || document.querySelector('.contact-form form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                let alertBox = document.getElementById('home-contact-alert');
-                if (!alertBox) {
-                    alertBox = document.createElement('div');
-                    alertBox.id = 'home-contact-alert';
-                    alertBox.className = 'alert alert-info py-2 px-3 small mt-3';
-                    alertBox.role = 'alert';
-                    contactForm.appendChild(alertBox);
-                }
-                alertBox.innerHTML = '<i class="fas fa-info-circle me-1"></i> Online enquiry is temporarily unavailable. Please check back soon.';
-                alertBox.style.display = 'block';
-                if (alertBox.scrollIntoView) {
-                    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            });
-        }
+        renderSharedContactBlocks();
     } catch (err) {
         console.error('Failed to init homepage services:', err);
     }
+}
+
+// ==========================================
+// 8B. SHARED CONTACT BLOCK & SOCIAL RENDERER
+// ==========================================
+function getSharedContactBlockHtml(options = {}) {
+    const isFooter = options.variant === 'footer';
+    const waUrl = `https://wa.me/${SITE_CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello MSR Tent Mart, I would like to make an enquiry about your event decoration materials.')}`;
+
+    if (isFooter) {
+        return `
+            <h5>Contact</h5>
+            <p class="small text-muted mb-3">Enquire directly via WhatsApp for availability and bookings.</p>
+            <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light mb-2 w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                <i class="fab fa-whatsapp text-success"></i> WhatsApp Enquiry
+            </a>
+            <p class="small mb-0 text-muted"><i class="fas fa-phone-alt me-2"></i>${escapeHtml(SITE_CONFIG.WHATSAPP_DISPLAY)}</p>
+            ${SITE_CONFIG.BUSINESS_EMAIL ? `<p class="small mt-1 mb-0"><a href="mailto:${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}" class="text-muted"><i class="fas fa-envelope me-2"></i>${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}</a></p>` : ''}
+        `;
+    }
+
+    return `
+        <div class="shared-contact-card p-4 p-md-5 rounded-4 shadow-sm border bg-white text-center">
+            <div class="mb-3">
+                <i class="fab fa-whatsapp text-success display-4"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-2">WhatsApp Enquiry</h3>
+            <p class="text-muted mb-4">
+                Chat with us directly on WhatsApp to check availability, discuss custom requirements, or request pricing for our event decoration items.
+            </p>
+            <div class="d-flex justify-content-center mb-3">
+                <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-hero btn-hero-primary d-inline-flex align-items-center justify-content-center gap-2 px-4 py-2">
+                    <i class="fab fa-whatsapp fs-5"></i> Enquiry on WhatsApp
+                </a>
+            </div>
+            <p class="fw-semibold text-secondary mb-0">
+                <i class="fas fa-phone-alt me-1 text-muted"></i> Direct WhatsApp: <span class="text-dark">${escapeHtml(SITE_CONFIG.WHATSAPP_DISPLAY)}</span>
+            </p>
+            ${SITE_CONFIG.BUSINESS_EMAIL ? `
+            <p class="mt-3 mb-0 text-muted">
+                <i class="fas fa-envelope me-1"></i> Reach out on email: <a href="mailto:${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}" class="text-decoration-underline text-dark">${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}</a>
+            </p>
+            ` : ''}
+        </div>
+    `;
+}
+
+function renderSharedContactBlocks() {
+    document.querySelectorAll('[data-shared-contact]').forEach(el => {
+        const variant = el.getAttribute('data-shared-contact');
+        el.innerHTML = getSharedContactBlockHtml({ variant });
+    });
+}
+
+function renderFooterSocial() {
+    document.querySelectorAll('.footer-social').forEach(container => {
+        let html = '';
+        const s = SITE_CONFIG.SOCIAL;
+        if (s.instagram) {
+            html += `<a href="${escapeHtml(s.instagram)}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>`;
+        }
+        if (s.facebook) {
+            html += `<a href="${escapeHtml(s.facebook)}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>`;
+        }
+        if (s.linkedin) {
+            html += `<a href="${escapeHtml(s.linkedin)}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>`;
+        }
+        if (s.youtube) {
+            html += `<a href="${escapeHtml(s.youtube)}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>`;
+        }
+        if (s.other) {
+            html += `<a href="${escapeHtml(s.other)}" target="_blank" rel="noopener noreferrer" aria-label="Social Link"><i class="fas fa-link"></i></a>`;
+        }
+        if (html) {
+            container.innerHTML = html;
+            container.style.display = 'flex';
+        } else {
+            container.style.display = 'none';
+        }
+    });
+}
+
+function renderFooterCopyright() {
+    document.querySelectorAll('.footer-bottom-row p').forEach(el => {
+        el.textContent = `© ${new Date().getFullYear()} ${SITE_CONFIG.BUSINESS_NAME}`;
+    });
 }
 
 // ==========================================
@@ -518,6 +599,9 @@ async function loadComponents() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
 
     if (!headerPlaceholder && !footerPlaceholder) {
+        renderSharedContactBlocks();
+        renderFooterSocial();
+        renderFooterCopyright();
         setActiveNavigation();
         return;
     }
@@ -548,6 +632,9 @@ async function loadComponents() {
             }
         }
 
+        renderSharedContactBlocks();
+        renderFooterSocial();
+        renderFooterCopyright();
         setActiveNavigation();
     } catch (error) {
         console.error('Error loading shared components:', error);
@@ -569,20 +656,30 @@ function adaptComponentLinks(container, basePath) {
 
 function setActiveNavigation() {
     const path = window.location.pathname;
-    const currentPage = path.split('/').pop() || 'index.html';
     const isCategory = path.includes('/categories/');
     const isProducts = path.includes('/products/');
+    const isAbout = path.includes('/about/');
+    const isContact = path.includes('/contact/');
+    const isHome = path.endsWith('/') || (path.endsWith('index.html') && !isCategory && !isProducts && !isAbout && !isContact);
 
     document.querySelectorAll('.nav-link-desktop').forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href') || '';
 
-        if (currentPage === 'index.html' || currentPage === '') {
-            if (href.endsWith('index.html') && !href.includes('#')) {
+        if (isHome) {
+            if (href.endsWith('index.html') && !href.includes('#') && !href.includes('/')) {
                 link.classList.add('active');
             }
         } else if (isProducts || isCategory) {
             if (href.includes('products/')) {
+                link.classList.add('active');
+            }
+        } else if (isAbout) {
+            if (href.includes('about/')) {
+                link.classList.add('active');
+            }
+        } else if (isContact) {
+            if (href.includes('contact/')) {
                 link.classList.add('active');
             }
         }

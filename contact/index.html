@@ -4,22 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - MSR Tent Mart</title>
-    <meta name="description" content="Contact MSR Tent Mart for enquiries about event decoration materials: sofa sets, mate covers, floral screens, artificial flowers, bouquets, mums, and carnations.">
+    <meta name="description" content="Contact MSR Tent Mart directly on WhatsApp for enquiries regarding event and wedding decoration materials, sofa sets, and floral decor.">
     <link rel="canonical" href="https://bff-demo-site-01.github.io/contact/">
+    <!-- Remove noindex when the owner approves this page. -->
+    <meta name="robots" content="noindex">
+
     <!-- Open Graph -->
     <meta property="og:title" content="Contact Us - MSR Tent Mart">
-    <meta property="og:description" content="Get in touch with MSR Tent Mart for event decoration material enquiries.">
+    <meta property="og:description" content="Reach out to MSR Tent Mart on WhatsApp for event decoration material enquiries.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bff-demo-site-01.github.io/contact/">
     <meta property="og:image" content="https://bff-demo-site-01.github.io/assets/images/msr-tent-mart-logo-1.png">
+
+    <!-- JSON-LD Organization -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"MSR Tent Mart","url":"https://bff-demo-site-01.github.io/"}
+    </script>
+
     <!-- Favicon & Icons -->
     <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons/apple-touch-icon.png">
     <link rel="manifest" href="../assets/site.webmanifest">
     <meta name="theme-color" content="#800000">
+
+    <!-- CSS Stack -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/variables-theme.css" rel="stylesheet">
+    <link href="../assets/css/globals.css" rel="stylesheet">
+    <link href="../assets/css/catalogue.css" rel="stylesheet">
+    <link href="../assets/css/index.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Contact page content pending. -->
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="services-section py-5">
+            <div class="container-max mx-auto px-responsive">
+                <div class="text-center mb-5">
+                    <p class="section-label">Get in Touch</p>
+                    <h1 class="section-title">Contact Us</h1>
+                    <div class="section-divider"></div>
+                </div>
+
+                <!-- TO CONFIRM: Showroom address, working hours, and official landline phone number to be provided by owner -->
+
+                <div class="row justify-content-center mb-5">
+                    <div class="col-12 col-md-8 col-lg-6 text-center">
+                        <p class="lead text-secondary mb-4">
+                            Have questions about our event materials or looking to check item availability? We handle all customer enquiries directly through WhatsApp.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Shared Contact Block -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-12 col-md-8 col-lg-6" data-shared-contact="main">
+                        <div class="shared-contact-card p-4 p-md-5 rounded-4 shadow-sm border bg-white text-center">
+                            <div class="mb-3">
+                                <i class="fab fa-whatsapp text-success display-4"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-2">WhatsApp Enquiry</h3>
+                            <p class="text-muted mb-4">
+                                Chat with us directly on WhatsApp to check availability, discuss custom requirements, or request pricing for our event decoration items.
+                            </p>
+                            <div class="d-flex justify-content-center mb-3">
+                                <a href="https://wa.me/916384500051?text=Hello%20MSR%20Tent%20Mart%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20your%20event%20decoration%20materials." target="_blank" rel="noopener noreferrer" class="btn btn-hero btn-hero-primary d-inline-flex align-items-center justify-content-center gap-2 px-4 py-2">
+                                    <i class="fab fa-whatsapp fs-5"></i> Enquiry on WhatsApp
+                                </a>
+                            </div>
+                            <p class="fw-semibold text-secondary mb-0">
+                                <i class="fas fa-phone-alt me-1 text-muted"></i> Direct WhatsApp: <span class="text-dark">+91 63845 00051</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Link Back to Catalogue -->
+                <div class="text-center">
+                    <a href="../products/index.html" class="btn btn-outline-secondary px-4 py-2">
+                        <i class="fas fa-boxes me-2"></i>Browse All Products
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            await loadComponents();
+        });
+    </script>
 </body>
 </html>

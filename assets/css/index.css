@@ -223,6 +223,7 @@ header {
     justify-content: center;
     color: white;
     text-align: center;
+    padding: 0 1rem;
     animation: fadeIn 0.8s ease-out;
 }
 
@@ -452,6 +453,7 @@ body.dark-mode .why-choose-section {
     overflow: hidden;
     background-size: cover;
     background-position: center;
+    background-color: var(--background-dark);
     box-shadow: var(--shadow-xl);
 }
 
@@ -1069,7 +1071,9 @@ footer {
 
 @media (max-width: 767px) {
     .hero-title {
-        font-size: 2.25rem;
+        font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
     
     .section-title {
@@ -1077,3 +1081,20 @@ footer {
     }
 }
 
+
+/* ==========================================
+   SHARED CONTACT CARD
+   ========================================== */
+
+.shared-contact-card {
+    background-color: white;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+body.dark-mode .shared-contact-card {
+    background-color: var(--bg-slate-800);
+    border-color: var(--border-dark);
+}
