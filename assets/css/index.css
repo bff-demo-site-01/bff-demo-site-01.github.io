@@ -106,8 +106,7 @@ header {
         height: auto;
     }
 
-    .nav-left,
-    .nav-right {
+    .nav-menu {
         display: none;
     }
 
@@ -144,8 +143,7 @@ header {
         transition: all 0.3s ease;
     }
 
-    .navbar-desktop.open .nav-left,
-    .navbar-desktop.open .nav-right {
+    .navbar-desktop.open .nav-menu {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -157,6 +155,18 @@ header {
         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         z-index: 1019;
         gap: 0;
+    }
+
+    .navbar-desktop.open .nav-left,
+    .navbar-desktop.open .nav-right {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        background: none;
+        padding: 0;
+        box-shadow: none;
+        gap: 0;
+        width: 100%;
     }
 
     .navbar-desktop.open .nav-link-desktop {
@@ -180,6 +190,10 @@ header {
 
 /* DESKTOP — hamburger hidden, logo absolutely centered */
 @media (min-width: 992px) {
+    .nav-menu {
+        display: contents;
+    }
+
     .hamburger {
         display: none;
     }
@@ -430,6 +444,33 @@ body.dark-mode .service-card h4 {
 .service-card p {
     color: var(--text-muted-medium);
     margin-top: 0.5rem;
+}
+
+.service-card .btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+    transition: all var(--transition-fast);
+}
+
+.service-card .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+body.dark-mode .service-card .btn-outline-primary {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+body.dark-mode .service-card .btn-outline-primary:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--background-dark);
 }
 
 /* ==========================================
@@ -910,19 +951,30 @@ footer {
 
 .footer-brand {
     display: flex;
+    align-items: center;
     gap: 0.75rem;
     margin-bottom: 1.5rem;
 }
 
 .footer-brand-icon {
     display: flex;
-    height: 40px;
-    width: 40px;
+    height: 44px;
+    width: 44px;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
-    background-color: var(--primary-color);
-    color: white;
+    border-radius: 50%;
+    background-color: var(--color-white, #ffffff);
+    padding: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.footer-brand-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    display: block;
 }
 
 .footer-brand-icon .material-symbols-outlined {
@@ -989,6 +1041,16 @@ footer {
 
 .footer-column a:hover {
     color: var(--primary-color);
+}
+
+.footer-column p {
+    color: var(--footer-text-muted, #9ca3af);
+}
+
+.footer-text-muted,
+.footer-column p.footer-text-muted,
+.footer-column .footer-text-muted {
+    color: var(--footer-text-muted, #9ca3af) !important;
 }
 
 .footer-newsletter p {

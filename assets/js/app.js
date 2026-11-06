@@ -514,12 +514,12 @@ function getSharedContactBlockHtml(options = {}) {
     if (isFooter) {
         return `
             <h5>Contact</h5>
-            <p class="small text-muted mb-3">Enquire directly via WhatsApp for availability and bookings.</p>
+            <p class="small footer-text-muted mb-3">Enquire directly via WhatsApp for availability and bookings.</p>
             <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light mb-2 w-100 d-inline-flex align-items-center justify-content-center gap-2">
                 <i class="fab fa-whatsapp text-success"></i> WhatsApp Enquiry
             </a>
-            <p class="small mb-0 text-muted"><i class="fas fa-phone-alt me-2"></i>${escapeHtml(SITE_CONFIG.WHATSAPP_DISPLAY)}</p>
-            ${SITE_CONFIG.BUSINESS_EMAIL ? `<p class="small mt-1 mb-0"><a href="mailto:${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}" class="text-muted"><i class="fas fa-envelope me-2"></i>${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}</a></p>` : ''}
+            <p class="small mb-0 footer-text-muted"><i class="fas fa-phone-alt me-2"></i>${escapeHtml(SITE_CONFIG.WHATSAPP_DISPLAY)}</p>
+            ${SITE_CONFIG.BUSINESS_EMAIL ? `<p class="small mt-1 mb-0"><a href="mailto:${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}" class="footer-text-muted"><i class="fas fa-envelope me-2"></i>${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}</a></p>` : ''}
         `;
     }
 
