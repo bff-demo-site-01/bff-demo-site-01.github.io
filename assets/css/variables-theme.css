@@ -8,6 +8,7 @@
     /* Brand Colors */
     --primary-color: #800000;
     --accent-gold: #C5A059;
+    --accent-gold-text: #8A6D2F;
     
     /* Background Colors */
     --background-light: #f8f5f5;
@@ -17,8 +18,8 @@
     /* Text Colors */
     --text-light: #1f2937;
     --text-dark: #f3f4f6;
-    --text-muted-light: #6b7280;
-    --text-muted-medium: #9ca3af;
+    --text-muted-light: #4b5563;
+    --text-muted-medium: #4b5563;
     --text-muted-dark: #374151;
     
     /* Footer Colors */
@@ -156,7 +157,9 @@
 body.dark-mode {
     --background-light: var(--background-dark);
     --text-light: var(--text-dark);
-    --text-muted-light: var(--text-muted-medium);
+    --text-muted-light: #9ca3af;
+    --text-muted-medium: #9ca3af;
     --text-muted-dark: #d1d5db;
     --border-light: var(--border-dark);
+    --accent-gold-text: var(--accent-gold);
 }

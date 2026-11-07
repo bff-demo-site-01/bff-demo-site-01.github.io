@@ -109,10 +109,7 @@ async function handleProductEnquiry(productCode) {
             const waNumber = (cleanNumber.length === 10) ? ('91' + cleanNumber) : cleanNumber;
             const encoded = encodeURIComponent(message);
             const waUrl = `https://wa.me/${waNumber}?text=${encoded}`;
-            const win = window.open(waUrl, '_blank', 'noopener,noreferrer');
-            if (!win || win.closed || typeof win.closed === 'undefined') {
-                window.location.href = waUrl;
-            }
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
         } else {
             // Fallback notice modal
             showEnquiryNoticeModal(product, message);
@@ -195,6 +192,7 @@ function handleProductImageError(imgEl, code) {
     imgEl.onerror = null;
     const parent = imgEl.closest('.product-img-wrap');
     if (parent) {
+        parent.classList.add('has-placeholder', 'loaded');
         parent.innerHTML = `
             <div class="product-placeholder-wrap">
                 <i class="fas fa-image"></i>
@@ -202,6 +200,70 @@ function handleProductImageError(imgEl, code) {
             </div>
         `;
     }
+}
+
+// ==========================================
+// 4B. IMAGE LOADING HELPERS (SKELETON & LAZY BACKGROUNDS)
+// ==========================================
+function initProductImageLoaders(container) {
+    const root = container || document;
+    root.querySelectorAll('.product-img-wrap img').forEach(img => {
+        const markLoaded = () => {
+            img.classList.add('img-loaded');
+            const wrap = img.closest('.product-img-wrap');
+            if (wrap) wrap.classList.add('loaded');
+        };
+
+        if (img.complete) {
+            if (img.naturalWidth > 0) {
+                markLoaded();
+            } else if (img.naturalWidth === 0) {
+                const codeBadge = img.closest('.product-card')?.querySelector('.product-code-badge');
+                const code = codeBadge ? codeBadge.textContent.trim() : '';
+                handleProductImageError(img, code);
+            }
+        } else {
+            img.addEventListener('load', markLoaded, { once: true });
+            img.addEventListener('error', () => {
+                const codeBadge = img.closest('.product-card')?.querySelector('.product-code-badge');
+                const code = codeBadge ? codeBadge.textContent.trim() : '';
+                handleProductImageError(img, code);
+            }, { once: true });
+        }
+    });
+}
+
+function initLazyBackgrounds(container) {
+    const root = container || document;
+    const elements = root.querySelectorAll('[data-bg]');
+    if (!elements.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+        elements.forEach(el => {
+            const bg = el.getAttribute('data-bg');
+            if (bg) {
+                el.style.backgroundImage = `url('${bg}')`;
+                el.removeAttribute('data-bg');
+            }
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const bg = el.getAttribute('data-bg');
+                if (bg) {
+                    el.style.backgroundImage = `url('${bg}')`;
+                    el.removeAttribute('data-bg');
+                }
+                obs.unobserve(el);
+            }
+        });
+    }, { rootMargin: '200px' });
+
+    elements.forEach(el => observer.observe(el));
 }
 
 // ==========================================
@@ -219,6 +281,7 @@ function renderProductCard(product, category) {
             <img src="${escapeHtml(resolvedImg)}" 
                  alt="${escapeHtml(product.altText || product.name)}" 
                  loading="lazy" 
+                 decoding="async" 
                  onerror="handleProductImageError(this, '${escapeHtml(product.code)}')" />
         `;
     } else if (isGroup && resolvedImg) {
@@ -226,6 +289,7 @@ function renderProductCard(product, category) {
             <img src="${escapeHtml(resolvedImg)}" 
                  alt="${escapeHtml(product.altText || product.name)}" 
                  loading="lazy" 
+                 decoding="async" 
                  style="opacity: 0.9;"
                  onerror="handleProductImageError(this, '${escapeHtml(product.code)}')" />
             <span class="product-group-badge" title="Referenced in collection swatch poster">Group Swatch</span>
@@ -246,10 +310,31 @@ function renderProductCard(product, category) {
         priceHtml = `<span class="price-tag enquiry-only">${CATALOGUE_CONFIG.missingPriceLabel}</span>`;
     }
 
+    let enquireButtonHtml = '';
+    if (CATALOGUE_CONFIG.whatsappEnabled && CATALOGUE_CONFIG.whatsappNumber) {
+        const cleanNumber = String(CATALOGUE_CONFIG.whatsappNumber).replace(/\D/g, '');
+        const waNumber = (cleanNumber.length === 10) ? ('91' + cleanNumber) : cleanNumber;
+        const message = buildEnquiryMessage(product, category);
+        const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+        enquireButtonHtml = `
+            <a class="btn-enquire" href="${waUrl}" target="_blank" rel="noopener noreferrer" aria-label="Inquire about ${escapeHtml(product.name)} on WhatsApp">
+                <i class="fab fa-whatsapp"></i> Inquire
+            </a>
+        `;
+    } else {
+        enquireButtonHtml = `
+            <button type="button" class="btn-enquire" onclick="handleProductEnquiry('${escapeHtml(product.code)}')">
+                <i class="fab fa-whatsapp"></i> Inquire
+            </button>
+        `;
+    }
+
+    const imgWrapClass = (!hasImage && !resolvedImg) ? 'product-img-wrap has-placeholder' : 'product-img-wrap';
+
     return `
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4" id="${escapeHtml(product.id)}">
             <div class="product-card">
-                <div class="product-img-wrap">
+                <div class="${imgWrapClass}">
                     <span class="product-code-badge">${escapeHtml(product.code)}</span>
                     ${imgBlock}
                 </div>
@@ -261,9 +346,7 @@ function renderProductCard(product, category) {
                     </p>
                     <div class="product-meta-row">
                         ${priceHtml}
-                        <button type="button" class="btn-enquire" onclick="handleProductEnquiry('${escapeHtml(product.code)}')">
-                            <i class="fab fa-whatsapp"></i> Inquire
-                        </button>
+                        ${enquireButtonHtml}
                     </div>
                 </div>
             </div>
@@ -333,6 +416,7 @@ async function initCategoryPage(categoryId) {
             }
 
             grid.innerHTML = noticeHtml + categoryProducts.map(p => renderProductCard(p, category)).join('');
+            initProductImageLoaders(grid);
         }
     } catch (err) {
         console.error('Failed to init category page:', err);
@@ -431,6 +515,7 @@ async function initAllProductsPage() {
                         const cat = data.categories.find(c => c.id === p.categoryId);
                         return renderProductCard(p, cat);
                     }).join('');
+                    initProductImageLoaders(grid);
                 }
             }
         }
@@ -487,7 +572,7 @@ async function initHomePage() {
             servicesRow.innerHTML = data.categories.map(c => `
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="service-card">
-                        <div class="service-image" style="background-image: url('${resolveAssetPath(c.heroImage)}');">
+                        <div class="service-image" data-bg="${resolveAssetPath(c.heroImage)}">
                             <i class="${c.icon} position-absolute top-50 start-50 translate-middle"></i>
                         </div>
                         <h4>${escapeHtml(c.name)} Collection</h4>
@@ -497,10 +582,43 @@ async function initHomePage() {
                     </div>
                 </div>
             `).join('');
+            initLazyBackgrounds(servicesRow);
         }
         renderSharedContactBlocks();
+        initLazyBackgrounds(document);
     } catch (err) {
         console.error('Failed to init homepage services:', err);
+    }
+}
+
+// ==========================================
+// 8A. ALL-CATEGORIES PAGE INITIALIZATION
+// ==========================================
+async function initCategoriesPage() {
+    try {
+        const data = await fetchCatalogueData();
+        const grid = document.getElementById('categories-grid');
+        if (!grid) return;
+
+        const sorted = [...data.categories].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+
+        grid.innerHTML = sorted.map(c => `
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-image" data-bg="${resolveAssetPath(c.heroImage)}">
+                        <i class="${c.icon} position-absolute top-50 start-50 translate-middle"></i>
+                    </div>
+                    <h4>${escapeHtml(c.name)} Collection</h4>
+                    <p>${escapeHtml(c.description)}</p>
+                    <span class="badge bg-light text-dark mb-2">${c.productCount} items</span>
+                    <a href="${resolveAssetPath(c.pageUrl)}" class="btn btn-sm btn-outline-primary mt-2">View Collection</a>
+                </div>
+            </div>
+        `).join('');
+
+        initLazyBackgrounds(grid);
+    } catch (err) {
+        console.error('Failed to init categories page:', err);
     }
 }
 
@@ -518,7 +636,7 @@ function getSharedContactBlockHtml(options = {}) {
             <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light mb-2 w-100 d-inline-flex align-items-center justify-content-center gap-2">
                 <i class="fab fa-whatsapp text-success"></i> WhatsApp Enquiry
             </a>
-            <p class="small mb-0 footer-text-muted"><i class="fas fa-phone-alt me-2"></i>${escapeHtml(SITE_CONFIG.WHATSAPP_DISPLAY)}</p>
+            <p class="small mb-0 footer-text-muted"><i class="fas fa-phone-alt me-2"></i><a href="tel:+${escapeHtml(String(SITE_CONFIG.WHATSAPP_NUMBER).replace(/\D/g, ''))}" class="footer-phone-link">${escapeHtml(SITE_CONFIG.WHATSAPP_DISPLAY)}</a></p>
             ${SITE_CONFIG.BUSINESS_EMAIL ? `<p class="small mt-1 mb-0"><a href="mailto:${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}" class="footer-text-muted"><i class="fas fa-envelope me-2"></i>${escapeHtml(SITE_CONFIG.BUSINESS_EMAIL)}</a></p>` : ''}
         `;
     }
@@ -538,7 +656,7 @@ function getSharedContactBlockHtml(options = {}) {
                 </a>
             </div>
             <p class="fw-semibold text-secondary mb-0">
-                <i class="fas fa-phone-alt me-1 text-muted"></i> Direct WhatsApp: <span class="text-dark">${escapeHtml(SITE_CONFIG.WHATSAPP_DISPLAY)}</span>
+                <i class="fas fa-phone-alt me-1 text-muted"></i> Direct WhatsApp: <a href="tel:+${escapeHtml(String(SITE_CONFIG.WHATSAPP_NUMBER).replace(/\D/g, ''))}" class="footer-phone-link text-dark">${escapeHtml(SITE_CONFIG.WHATSAPP_DISPLAY)}</a>
             </p>
             ${SITE_CONFIG.BUSINESS_EMAIL ? `
             <p class="mt-3 mb-0 text-muted">
@@ -603,6 +721,7 @@ async function loadComponents() {
         renderFooterSocial();
         renderFooterCopyright();
         setActiveNavigation();
+        initLazyBackgrounds();
         return;
     }
 
@@ -636,6 +755,7 @@ async function loadComponents() {
         renderFooterSocial();
         renderFooterCopyright();
         setActiveNavigation();
+        initLazyBackgrounds();
     } catch (error) {
         console.error('Error loading shared components:', error);
     }
@@ -656,11 +776,12 @@ function adaptComponentLinks(container, basePath) {
 
 function setActiveNavigation() {
     const path = window.location.pathname;
-    const isCategory = path.includes('/categories/');
+    const isCategoriesIndex = path.endsWith('/categories/') || path.endsWith('/categories/index.html');
+    const isCategoryPage = path.includes('/categories/') && !isCategoriesIndex;
     const isProducts = path.includes('/products/');
     const isAbout = path.includes('/about/');
     const isContact = path.includes('/contact/');
-    const isHome = path.endsWith('/') || (path.endsWith('index.html') && !isCategory && !isProducts && !isAbout && !isContact);
+    const isHome = (path.endsWith('/') || path.endsWith('index.html')) && !path.includes('/categories/') && !isProducts && !isAbout && !isContact && !path.includes('/privacy/') && !path.includes('/terms/');
 
     document.querySelectorAll('.nav-link-desktop').forEach(link => {
         link.classList.remove('active');
@@ -670,7 +791,11 @@ function setActiveNavigation() {
             if (href.endsWith('index.html') && !href.includes('#') && !href.includes('/')) {
                 link.classList.add('active');
             }
-        } else if (isProducts || isCategory) {
+        } else if (isCategoriesIndex) {
+            if (href.includes('categories/index.html') || href.endsWith('/categories/')) {
+                link.classList.add('active');
+            }
+        } else if (isProducts || isCategoryPage) {
             if (href.includes('products/')) {
                 link.classList.add('active');
             }
